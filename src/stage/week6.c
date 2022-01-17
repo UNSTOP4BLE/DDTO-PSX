@@ -63,7 +63,7 @@ void Week6_Freaks_Draw(Back_Week6 *this, fixed_t x, fixed_t y, boolean flip)
 		{{3, 0}, {7, 4}},
 	};
 	
-	const CharFrame *cframe = &freaks_frame[frame_map[this->freaks_frame][stage.stage_id == StageId_6_2][flip]];
+	const CharFrame *cframe = &freaks_frame[frame_map[this->freaks_frame][stage.stage_id == StageId_1_2][flip]];
 	
 	fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
 	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
@@ -96,12 +96,14 @@ void Back_Week6_DrawBG(StageBack *back)
 				break;
 		}
 	}
+	if (stage.stage_id == StageId_1_2) {
 	Animatable_Animate(&this->freaks_animatable, (void*)this, Week6_Freaks_SetFrame);
 	
 	Week6_Freaks_Draw(this, FIXED_DEC(-110,1) - fx, FIXED_DEC(44,1) - fy, false);
 	Week6_Freaks_Draw(this,  FIXED_DEC(-20,1) - fx, FIXED_DEC(44,1) - fy, true);
 	Week6_Freaks_Draw(this,   FIXED_DEC(70,1) - fx, FIXED_DEC(44,1) - fy, false);
-	
+	}
+
 	//Draw foreground trees
 	fx = stage.camera.x >> 1;
 	fy = stage.camera.y >> 1;

@@ -1,11 +1,11 @@
 	{ //StageId_1_1 (Bopeebo)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_BFWeeb_New,  FIXED_DEC(52,1),  FIXED_DEC(50,1)},
+		{Char_monikapix_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Week6_New,
 		
 		//Song info
 		{FIXED_DEC(1,1),FIXED_DEC(1,1),FIXED_DEC(13,10)},
@@ -16,12 +16,12 @@
 	},
 	{ //StageId_1_2 (Fresh)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_BFWeeb_New,  FIXED_DEC(52,1),  FIXED_DEC(50,1)},
+		{Char_monikapix_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Week6_New,
 		
 		//Song info
 		{FIXED_DEC(1,1),FIXED_DEC(13,10),FIXED_DEC(18,10)},
@@ -32,12 +32,12 @@
 	},
 	{ //StageId_1_3 (Dadbattle)
 		//Characters
-		{Char_BF_New,    FIXED_DEC(60,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
-		{Char_GF_New,     FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
+		{Char_BFWeeb_New,  FIXED_DEC(52,1),  FIXED_DEC(50,1)},
+		{Char_monikapix_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_Week6_New,
 		
 		//Song info
 		{FIXED_DEC(13,10),FIXED_DEC(15,10),FIXED_DEC(23,10)},
@@ -278,7 +278,7 @@
 	{ //StageId_6_1 (Senpai)
 		//Characters
 		{Char_BFWeeb_New,  FIXED_DEC(52,1),  FIXED_DEC(50,1)},
-		{Char_Senpai_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_monikapix_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
 		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
@@ -294,7 +294,7 @@
 	{ //StageId_6_2 (Roses)
 		//Characters
 		{Char_BFWeeb_New,   FIXED_DEC(52,1),  FIXED_DEC(50,1)},
-		{Char_SenpaiM_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
+		{Char_monikapix_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
 		{Char_GFWeeb_New,    FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background

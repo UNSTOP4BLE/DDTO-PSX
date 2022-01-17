@@ -16,8 +16,7 @@ all: \
 	iso/mom/hair.tim \
 	iso/bf/xmas.arc \
 	iso/xmasp/main.arc \
-	iso/senpai/main.arc \
-	iso/senpaim/main.arc \
+	iso/monikap/main.arc \
 	iso/spirit/main.arc \
 	iso/tank/main.arc \
 	iso/tank/ugh.arc \
@@ -69,9 +68,8 @@ iso/bf/xmas.arc: iso/bf/xmasbf0.tim iso/bf/xmasbf1.tim iso/bf/xmasbf2.tim iso/bf
 # Xmas Parents
 iso/xmasp/main.arc: iso/xmasp/idle0.tim iso/xmasp/idle1.tim iso/xmasp/idle2.tim iso/xmasp/idle3.tim iso/xmasp/lefta0.tim iso/xmasp/lefta1.tim iso/xmasp/leftb0.tim iso/xmasp/leftb1.tim iso/xmasp/downa0.tim iso/xmasp/downa1.tim iso/xmasp/downb0.tim iso/xmasp/downb1.tim iso/xmasp/upa0.tim iso/xmasp/upa1.tim iso/xmasp/upb0.tim iso/xmasp/upb1.tim iso/xmasp/righta0.tim iso/xmasp/righta1.tim iso/xmasp/rightb0.tim iso/xmasp/rightb1.tim
 
-# Senpai
-iso/senpai/main.arc: iso/senpai/senpai0.tim iso/senpai/senpai1.tim
-iso/senpaim/main.arc: iso/senpaim/senpai0.tim iso/senpaim/senpai1.tim
+# Monika pixel
+iso/monikap/main.arc: iso/monikap/monika0.tim iso/monikap/monika1.tim
 
 # Spirit
 iso/spirit/main.arc: iso/spirit/spirit0.tim iso/spirit/spirit1.tim
