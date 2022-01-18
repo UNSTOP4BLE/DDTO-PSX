@@ -59,6 +59,7 @@ static const u8 note_anims[4][3] = {
 #include "character/xmasbf.h"
 #include "character/xmasp.h"
 #include "character/monikapix.h"
+#include "character/duet.h"
 #include "character/spirit.h"
 #include "character/tank.h"
 #include "character/gf.h"

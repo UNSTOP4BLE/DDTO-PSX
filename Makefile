@@ -37,6 +37,7 @@ SRCS = src/main.c \
        src/character/xmasbf.c \
        src/character/xmasp.c \
        src/character/monikapix.c \
+       src/character/duet.c \
        src/character/spirit.c \
        src/character/tank.c \
        src/character/gf.c \

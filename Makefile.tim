@@ -17,6 +17,7 @@ all: \
 	iso/bf/xmas.arc \
 	iso/xmasp/main.arc \
 	iso/monikap/main.arc \
+	iso/duet/main.arc \
 	iso/spirit/main.arc \
 	iso/tank/main.arc \
 	iso/tank/ugh.arc \
@@ -70,6 +71,8 @@ iso/xmasp/main.arc: iso/xmasp/idle0.tim iso/xmasp/idle1.tim iso/xmasp/idle2.tim 
 
 # Monika pixel
 iso/monikap/main.arc: iso/monikap/monika0.tim iso/monikap/monika1.tim
+
+iso/duet/main.arc: iso/duet/duet0.tim iso/duet/duet1.tim iso/duet/duet2.tim iso/duet/duet3.tim iso/duet/duet4.tim iso/duet/duet5.tim
 
 # Spirit
 iso/spirit/main.arc: iso/spirit/spirit0.tim iso/spirit/spirit1.tim
