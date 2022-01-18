@@ -19,58 +19,58 @@ typedef struct
 	StageBack back;
 	
 	//Textures
+	IO_Data arc_hench, arc_hench_ptr[1];
+
 	Gfx_Tex tex_back0; //Background
 	Gfx_Tex tex_back1; //Trees
-	Gfx_Tex tex_back2; //Freaks
+
+	//Henchmen state
+	Gfx_Tex tex_hench;
+	u8 hench_frame, hench_tex_id;
 	
-	//Freaks state
-	Animatable freaks_animatable;
-	u8 freaks_frame;
+	Animatable hench_animatable;
+
 } Back_Week6;
 
-//Freaks animation and rects
-static const CharFrame freaks_frame[] = {
-	{0, {  0,   0,  83,  79}, { 17,  79}}, //normal 0
-	{0, { 84,   0,  83,  76}, { 18,  76}}, //normal 1
-	{0, {168,   0,  84,  82}, { 17,  82}}, //normal 2
-	{0, {  0,  80,  83,  81}, { 17,  81}}, //normal 3
-	
-	{0, { 84,  77,  83,  79}, { 17,  79}}, //disuaded 0
-	{0, {168,  83,  83,  76}, { 18,  76}}, //disuaded 1
-	{0, {  0, 162,  84,  82}, { 17,  82}}, //disuaded 2
-	{0, { 85, 157,  83,  81}, { 17,  81}}, //disuaded 3
+//Henchmen animation and rects
+static const CharFrame henchmen_frame[] = {
+	{0, { 35,   0,  38,  72}, { 21,  72}}, //0 left 1
+	{0, {108,   0,  51,  68}, { 28,  68}}, //1 left 2
+	{0, {194,   0,  39,  65}, { 21,  65}}, //2 left 3
+	{0, { 34,  84,  45,  68}, { 25,  68}}, //3 left 4
+	{0, {114,  81,  51,  68}, { 28,  68}}, //4 left 5
 };
 
-static const Animation freaks_anim[] = {
-	{2, (const u8[]){1, 0, 0, 3, ASCR_BACK, 1}},
-	{2, (const u8[]){2, 3, 3, 0, ASCR_BACK, 1}},
+static const Animation henchmen_anim[] = {
+	{2, (const u8[]){0, 0, 1, 1, 2, 2, 3, 3, 4, 4, ASCR_CHGANI, 0}}, //Left
 };
 
-//Freaks functions
-void Week6_Freaks_SetFrame(void *user, u8 frame)
+//Henchmen functions
+void Week6_Henchmen_SetFrame(void *user, u8 frame)
 {
 	Back_Week6 *this = (Back_Week6*)user;
-	this->freaks_frame = frame;
+	
+	//Check if this is a new frame
+	if (frame != this->hench_frame)
+	{
+		//Check if new art shall be loaded
+		const CharFrame *cframe = &henchmen_frame[this->hench_frame = frame];
+		if (cframe->tex != this->hench_tex_id)
+			Gfx_LoadTex(&this->tex_hench, this->arc_hench_ptr[this->hench_tex_id = cframe->tex], 0);
+	}
 }
 
-void Week6_Freaks_Draw(Back_Week6 *this, fixed_t x, fixed_t y, boolean flip)
+void Week6_Henchmen_Draw(Back_Week6 *this, fixed_t x, fixed_t y)
 {
 	//Draw character
-	static const u8 frame_map[4][2][2] = {
-		{{0, 3}, {4, 7}},
-		{{1, 2}, {5, 6}},
-		{{2, 1}, {6, 5}},
-		{{3, 0}, {7, 4}},
-	};
-	
-	const CharFrame *cframe = &freaks_frame[frame_map[this->freaks_frame][stage.stage_id == StageId_1_2][flip]];
+	const CharFrame *cframe = &henchmen_frame[this->hench_frame];
 	
 	fixed_t ox = x - ((fixed_t)cframe->off[0] << FIXED_SHIFT);
 	fixed_t oy = y - ((fixed_t)cframe->off[1] << FIXED_SHIFT);
 	
 	RECT src = {cframe->src[0], cframe->src[1], cframe->src[2], cframe->src[3]};
 	RECT_FIXED dst = {ox, oy, src.w << FIXED_SHIFT, src.h << FIXED_SHIFT};
-	Stage_DrawTex(&this->tex_back2, &src, &dst, stage.camera.bzoom);
+	Stage_DrawTex(&this->tex_hench, &src, &dst, stage.camera.bzoom);
 }
 
 //Week 6 background functions
@@ -83,26 +83,19 @@ void Back_Week6_DrawBG(StageBack *back)
 	//Animate and draw freaks
 	fx = (stage.camera.x << 2) / 5;
 	fy = (stage.camera.y << 2) / 5;
-	
+
 	if (stage.flag & STAGE_FLAG_JUST_STEP)
 	{
 		switch (stage.song_step & 7)
 		{
 			case 0:
-				Animatable_SetAnim(&this->freaks_animatable, 0);
-				break;
-			case 4:
-				Animatable_SetAnim(&this->freaks_animatable, 1);
+				Animatable_SetAnim(&this->hench_animatable, 0);
 				break;
 		}
 	}
-	if (stage.stage_id == StageId_1_2) {
-	Animatable_Animate(&this->freaks_animatable, (void*)this, Week6_Freaks_SetFrame);
+	Animatable_Animate(&this->hench_animatable, (void*)this, Week6_Henchmen_SetFrame);
 	
-	Week6_Freaks_Draw(this, FIXED_DEC(-110,1) - fx, FIXED_DEC(44,1) - fy, false);
-	Week6_Freaks_Draw(this,  FIXED_DEC(-20,1) - fx, FIXED_DEC(44,1) - fy, true);
-	Week6_Freaks_Draw(this,   FIXED_DEC(70,1) - fx, FIXED_DEC(44,1) - fy, false);
-	}
+	Week6_Henchmen_Draw(this, FIXED_DEC(100,1) - fx, FIXED_DEC(30,1) - fy);
 
 	//Draw foreground trees
 	fx = stage.camera.x >> 1;
@@ -285,6 +278,9 @@ void Back_Week6_Free(StageBack *back)
 {
 	Back_Week6 *this = (Back_Week6*)back;
 	
+	//Free henchmen archive
+	Mem_Free(this->arc_hench);
+
 	//Free structure
 	Mem_Free(this);
 }
@@ -308,12 +304,8 @@ StageBack *Back_Week6_New(void)
 		IO_Data arc_back = IO_Read("\\WEEK6\\BACK.ARC;1");
 		Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 		Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
-		Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "back2.tim"), 0);
 		Mem_Free(arc_back);
-		
-		//Initialize freaks state
-		Animatable_Init(&this->freaks_animatable, freaks_anim);
-		Animatable_SetAnim(&this->freaks_animatable, 0);
+
 	}
 	else
 	{
@@ -327,5 +319,14 @@ StageBack *Back_Week6_New(void)
 		Gfx_LoadTex(&this->tex_back0, IO_Read("\\WEEK6\\BACK3.TIM;1"), GFX_LOADTEX_FREE);
 	}
 	
+	//Load henchmen textures
+	this->arc_hench = IO_Read("\\WEEK6\\BACK.ARC;1");
+	this->arc_hench_ptr[0] = Archive_Find(this->arc_hench, "back2.tim");
+	
+	//Initialize henchmen state
+	Animatable_Init(&this->hench_animatable, henchmen_anim);
+	Animatable_SetAnim(&this->hench_animatable, 0);
+	this->hench_frame = this->hench_tex_id = 0xFF; //Force art load
+
 	return (StageBack*)this;
 }
