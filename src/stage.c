@@ -27,6 +27,7 @@
 
 #define STAGE_FREECAM //Freecam
 
+//normal note x
 static const fixed_t note_x[8] = {
 	//BF
 	 FIXED_DEC(26,1) + FIXED_DEC(SCREEN_WIDEADD,4),
@@ -40,6 +41,20 @@ static const fixed_t note_x[8] = {
 	 FIXED_DEC(-26,1) - FIXED_DEC(SCREEN_WIDEADD,4),
 };
 
+//middle note x
+static const fixed_t note_xmiddle[8] = {
+	//BF
+	 FIXED_DEC(26,1) + FIXED_DEC(SCREEN_WIDEADD,4),
+	 FIXED_DEC(60,1) + FIXED_DEC(SCREEN_WIDEADD,4),//+34
+	 FIXED_DEC(94,1) + FIXED_DEC(SCREEN_WIDEADD,4),
+	FIXED_DEC(128,1) + FIXED_DEC(SCREEN_WIDEADD,4),
+	//Opponent
+	FIXED_DEC(-128,1) - FIXED_DEC(SCREEN_WIDEADD,4),
+	 FIXED_DEC(-128,1) - FIXED_DEC(SCREEN_WIDEADD,4),//+34
+	 FIXED_DEC(-128,1) - FIXED_DEC(SCREEN_WIDEADD,4),
+	 FIXED_DEC(-128,1) - FIXED_DEC(SCREEN_WIDEADD,4),
+};
+
 static const fixed_t note_y = FIXED_DEC(32 - SCREEN_HEIGHT2, 1);
 
 static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
@@ -50,10 +65,10 @@ static const u8 note_anims[4][3] = {
 	{CharAnim_Right, CharAnim_RightAlt, PlayerAnim_RightMiss},
 };
 
-//Stage definitions
-int arrowposx = 0;
-int arrowposy = 0;
+//middlescroll
+int arrowposx,mogus;
 
+//Stage definitions
 #include "character/bf.h"
 #include "character/bfweeb.h"
 #include "character/dad.h"
@@ -493,7 +508,7 @@ static void Stage_SustainCheck(PlayerState *this, u8 type)
 static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 {
 	//Handle player note presses
-	if (stage.botplay == 0) {
+	if (!(stage.botplay)) {
 		if (playing)
 		{
 			u8 i = (this->character == stage.opponent) ? NOTE_FLAG_OPPONENT : 0;
@@ -526,7 +541,7 @@ static void Stage_ProcessPlayer(PlayerState *this, Pad *pad, boolean playing)
 		}
 	}
 	
-	if (stage.botplay == 1) {
+	if (stage.botplay) {
 		//Do perfect note checks
 		if (playing)
 		{
@@ -855,6 +870,13 @@ static void Stage_DrawNotes(void)
 		}
 		else
 		{
+
+			if (stage.middlescroll)
+		     	mogus = note_xmiddle[(note->type & 0x7) ^ stage.note_swap];
+
+		    	else
+		    	mogus = note_x[(note->type & 0x7) ^ stage.note_swap];
+
 			//Don't draw if below screen
 			RECT note_src;
 			RECT_FIXED note_dst;
@@ -877,7 +899,6 @@ static void Stage_DrawNotes(void)
 				{
 					clip = 0;
 				}
-				
 				//Draw sustain
 				if (note->type & NOTE_FLAG_SUSTAIN_END)
 				{
@@ -888,8 +909,8 @@ static void Stage_DrawNotes(void)
 						note_src.w = 32;
 						note_src.h = 28 - (clip >> FIXED_SHIFT);
 						
-						note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-						note_dst.y = FIXED_DEC(arrowposy,1) + y + clip;
+						note_dst.x = FIXED_DEC(arrowposx,1) + mogus - FIXED_DEC(16,1);
+						note_dst.y =  y + clip;
 						note_dst.w = note_src.w << FIXED_SHIFT;
 						note_dst.h = (note_src.h << FIXED_SHIFT);
 						
@@ -915,8 +936,8 @@ static void Stage_DrawNotes(void)
 						note_src.w = 32;
 						note_src.h = 16;
 						
-						note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-						note_dst.y = FIXED_DEC(arrowposy,1) + y + clip;
+						note_dst.x = FIXED_DEC(arrowposx,1) + mogus - FIXED_DEC(16,1);
+						note_dst.y =  y + clip;
 						note_dst.w = note_src.w << FIXED_SHIFT;
 						note_dst.h = (next_y - y) - clip;
 						
@@ -938,8 +959,8 @@ static void Stage_DrawNotes(void)
 				note_src.w = 32;
 				note_src.h = 32;
 				
-				note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-				note_dst.y = FIXED_DEC(arrowposy,1) + y - FIXED_DEC(16,1);
+				note_dst.x = FIXED_DEC(arrowposx,1) + mogus - FIXED_DEC(16,1);
+				note_dst.y =  y - FIXED_DEC(16,1);
 				note_dst.w = note_src.w << FIXED_SHIFT;
 				note_dst.h = note_src.h << FIXED_SHIFT;
 				
@@ -991,9 +1012,10 @@ static void Stage_DrawNotes(void)
 				note_src.y = 0;
 				note_src.w = 32;
 				note_src.h = 32;
+
 				
-				note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-				note_dst.y = FIXED_DEC(arrowposy,1) +  y - FIXED_DEC(16,1);
+				note_dst.x = FIXED_DEC(arrowposx,1) + mogus - FIXED_DEC(16,1);
+				note_dst.y =  y - FIXED_DEC(16,1);
 				note_dst.w = note_src.w << FIXED_SHIFT;
 				note_dst.h = note_src.h << FIXED_SHIFT;
 				
@@ -1276,7 +1298,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.sbump = FIXED_UNIT;
 	
 	//Initialize stage according to mode
-	stage.note_swap = (stage.mode == StageMode_Swap) ? 4 : 0;
+	stage.note_swap = (stage.mode == StageMode_Swap && (!(stage.middlescroll))) ? 4 : 0;
 	
 	//Load music
 	stage.note_scroll = 0;
@@ -1492,12 +1514,10 @@ void Stage_Tick(void)
 	switch (stage.state)
 	{
 		case StageState_Play:
-		{
+		{   
 
-			if (stage.middlescroll && stage.mode != StageMode_Swap)
+			if (stage.middlescroll)
 				arrowposx = -80;
-			else if (stage.middlescroll && stage.mode == StageMode_Swap)
-				arrowposx = +80;
 			else
 				arrowposx = 0;
 			
@@ -1706,6 +1726,7 @@ void Stage_Tick(void)
 				case StageMode_Normal:
 				case StageMode_Swap:
 				{
+					int mineoppo = 0;
 					//Handle player 1 inputs
 					Stage_ProcessPlayer(&stage.player_state[0], &pad_state, playing);
 					
@@ -1721,6 +1742,10 @@ void Stage_Tick(void)
 						//Opponent note hits
 						if (playing && (note->type & NOTE_FLAG_OPPONENT) && !(note->type & NOTE_FLAG_HIT))
 						{
+							if (note->type & NOTE_FLAG_MINE)
+							mineoppo = 1;
+							else 
+							mineoppo = 0;
 							//Opponent hits note
 							Stage_StartVocal();
 							if (note->type & NOTE_FLAG_SUSTAIN)
@@ -1728,12 +1753,13 @@ void Stage_Tick(void)
 							else
 								opponent_anote = note_anims[note->type & 0x3][(note->type & NOTE_FLAG_ALT_ANIM) != 0];
 							note->type |= NOTE_FLAG_HIT;
+							
 						}
 					}
 					
-					if (opponent_anote != CharAnim_Idle)
+					if (opponent_anote != CharAnim_Idle && mineoppo != 1)
 						stage.opponent->set_anim(stage.opponent, opponent_anote);
-					else if (opponent_snote != CharAnim_Idle)
+					else if (opponent_snote != CharAnim_Idle && mineoppo != 1)
 						stage.opponent->set_anim(stage.opponent, opponent_snote);
 					break;
 				}

@@ -37,7 +37,7 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_Week5B, XA_LENGTH(13223)}, //XA_WinterHorrorland
 	//WEEK6A.XA
 	{XA_Week6A, XA_LENGTH(9800)}, //XA_Senpai
-	{XA_Week6A, XA_LENGTH(8928)}, //XA_Roses
+	{XA_Week6A, XA_LENGTH(16000)}, //XA_Roses
 	//WEEK6B.XA
 	{XA_Week6B, XA_LENGTH(9800)}, //XA_Thorns
 };
