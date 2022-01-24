@@ -39,6 +39,7 @@ static const fixed_t note_x[8] = {
 	 FIXED_DEC(-60,1) - FIXED_DEC(SCREEN_WIDEADD,4),
 	 FIXED_DEC(-26,1) - FIXED_DEC(SCREEN_WIDEADD,4),
 };
+
 static const fixed_t note_y = FIXED_DEC(32 - SCREEN_HEIGHT2, 1);
 
 static const u16 note_key[] = {INPUT_LEFT, INPUT_DOWN, INPUT_UP, INPUT_RIGHT};
@@ -50,6 +51,9 @@ static const u8 note_anims[4][3] = {
 };
 
 //Stage definitions
+int arrowposx = 0;
+int arrowposy = 0;
+
 #include "character/bf.h"
 #include "character/bfweeb.h"
 #include "character/dad.h"
@@ -262,7 +266,7 @@ static u8 Stage_HitNote(PlayerState *this, u8 type, fixed_t offset)
 		{
 			//Create splash object
 			Obj_Splash *splash = Obj_Splash_New(
-				note_x[type ^ stage.note_swap],
+				FIXED_DEC(arrowposx,1) + note_x[type ^ stage.note_swap],
 				note_y * (stage.downscroll ? -1 : 1),
 				type & 0x3
 			);
@@ -594,7 +598,7 @@ void Stage_DrawTexCol(Gfx_Tex *tex, const RECT *src, const RECT_FIXED *dst, fixe
 	fixed_t wz = dst->w;
 	fixed_t hz = dst->h;
 	
-	if (stage.stage_id >= StageId_1_1 && stage.stage_id <= StageId_1_3)
+	if (stage.stage_id >= StageId_6_1 && stage.stage_id <= StageId_6_3)
 	{
 		//Handle HUD drawing
 		if (tex == &stage.tex_hud0)
@@ -884,8 +888,8 @@ static void Stage_DrawNotes(void)
 						note_src.w = 32;
 						note_src.h = 28 - (clip >> FIXED_SHIFT);
 						
-						note_dst.x = note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-						note_dst.y = y + clip;
+						note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
+						note_dst.y = FIXED_DEC(arrowposy,1) + y + clip;
 						note_dst.w = note_src.w << FIXED_SHIFT;
 						note_dst.h = (note_src.h << FIXED_SHIFT);
 						
@@ -911,8 +915,8 @@ static void Stage_DrawNotes(void)
 						note_src.w = 32;
 						note_src.h = 16;
 						
-						note_dst.x = note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-						note_dst.y = y + clip;
+						note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
+						note_dst.y = FIXED_DEC(arrowposy,1) + y + clip;
 						note_dst.w = note_src.w << FIXED_SHIFT;
 						note_dst.h = (next_y - y) - clip;
 						
@@ -934,8 +938,8 @@ static void Stage_DrawNotes(void)
 				note_src.w = 32;
 				note_src.h = 32;
 				
-				note_dst.x = note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-				note_dst.y = y - FIXED_DEC(16,1);
+				note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
+				note_dst.y = FIXED_DEC(arrowposy,1) + y - FIXED_DEC(16,1);
 				note_dst.w = note_src.w << FIXED_SHIFT;
 				note_dst.h = note_src.h << FIXED_SHIFT;
 				
@@ -988,8 +992,8 @@ static void Stage_DrawNotes(void)
 				note_src.w = 32;
 				note_src.h = 32;
 				
-				note_dst.x = note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
-				note_dst.y = y - FIXED_DEC(16,1);
+				note_dst.x = FIXED_DEC(arrowposx,1) + note_x[(note->type & 0x7) ^ stage.note_swap] - FIXED_DEC(16,1);
+				note_dst.y = FIXED_DEC(arrowposy,1) +  y - FIXED_DEC(16,1);
 				note_dst.w = note_src.w << FIXED_SHIFT;
 				note_dst.h = note_src.h << FIXED_SHIFT;
 				
@@ -1236,7 +1240,7 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.story = story;
 	
 	//Load HUD textures
-	if (id >= StageId_1_1 && id <= StageId_1_3)
+	if (id >= StageId_6_1 && id <= StageId_6_3)
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0WEEB.TIM;1"), GFX_LOADTEX_FREE);
 	else
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
@@ -1490,6 +1494,14 @@ void Stage_Tick(void)
 		case StageState_Play:
 		{
 
+			if (stage.middlescroll && stage.mode != StageMode_Swap)
+				arrowposx = -80;
+			else if (stage.middlescroll && stage.mode == StageMode_Swap)
+				arrowposx = +80;
+			else
+				arrowposx = 0;
+			
+
 			if (stage.botplay == 1)
 			{
 				//Draw botplay
@@ -1676,7 +1688,7 @@ void Stage_Tick(void)
 				//Bump screen
 				if (is_bump_step)
 					stage.bump = FIXED_DEC(103,100);
-				
+
 				//Bump health every 4 steps
 				if ((stage.song_step & 0x3) == 0)
 					stage.sbump = FIXED_DEC(103,100);
@@ -1763,14 +1775,17 @@ void Stage_Tick(void)
 			for (u8 i = 0; i < 4; i++)
 			{
 				//BF
-				note_dst.x = note_x[i ^ stage.note_swap] - FIXED_DEC(16,1);
+				note_dst.x = FIXED_DEC(arrowposx,1) + note_x[i ^ stage.note_swap] - FIXED_DEC(16,1);
 				Stage_DrawStrum(i, &note_src, &note_dst);
 				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
 				
 				//Opponent
-				note_dst.x = note_x[(i | 0x4) ^ stage.note_swap] - FIXED_DEC(16,1);
-				Stage_DrawStrum(i | 4, &note_src, &note_dst);
-				Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+				if (!(stage.middlescroll))
+				{
+					note_dst.x = FIXED_DEC(arrowposx,1) +  note_x[(i | 0x4) ^ stage.note_swap] - FIXED_DEC(16,1);
+					Stage_DrawStrum(i | 4, &note_src, &note_dst);
+					Stage_DrawTex(&stage.tex_hud0, &note_src, &note_dst, stage.bump);
+				}
 			}
 			
 			//Draw score
@@ -1851,6 +1866,29 @@ void Stage_Tick(void)
 				Stage_DrawTex(&stage.tex_hud1, &health_back, &health_dst, stage.bump);
 			}
 			
+			//Hardcoded stage stuff
+			switch (stage.stage_id)
+			{
+				case StageId_1_2: //Fresh GF bop
+					switch (stage.song_step)
+					{
+						case 16 << 2:
+							stage.gf_speed = 2 << 2;
+							break;
+						case 48 << 2:
+							stage.gf_speed = 1 << 2;
+							break;
+						case 80 << 2:
+							stage.gf_speed = 2 << 2;
+							break;
+						case 112 << 2:
+							stage.gf_speed = 1 << 2;
+							break;
+					}
+					break;
+				default:
+					break;
+			}
 			
 			//Draw stage foreground
 			if (stage.back->draw_fg != NULL)

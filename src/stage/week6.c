@@ -29,20 +29,30 @@ typedef struct
 	u8 hench_frame, hench_tex_id;
 	
 	Animatable hench_animatable;
+	Animatable hench_animatable2;
 
 } Back_Week6;
 
 //Henchmen animation and rects
-static const CharFrame henchmen_frame[] = {
+static const CharFrame henchmen_frame[10] = {
 	{0, { 35,   0,  38,  72}, { 21,  72}}, //0 left 1
 	{0, {108,   0,  51,  68}, { 28,  68}}, //1 left 2
 	{0, {194,   0,  39,  65}, { 21,  65}}, //2 left 3
 	{0, { 34,  84,  45,  68}, { 25,  68}}, //3 left 4
 	{0, {114,  81,  51,  68}, { 28,  68}}, //4 left 5
+	{0, {  0,   0,  33,  77}, { 90,  72}}, //0 left 1
+	{0, { 74,   0,  34,  84}, { 90,  68}}, //1 left 2
+	{0, {194,   0,  39,  65}, { 21,  65}}, //2 left 3
+	{0, { 34,  84,  45,  68}, { 25,  68}}, //3 left 4
+	{0, {114,  81,  51,  68}, { 28,  68}}, //4 left 5
 };
 
-static const Animation henchmen_anim[] = {
-	{2, (const u8[]){0, 0, 1, 1, 2, 2, 3, 3, 4, 4, ASCR_CHGANI, 0}}, //Left
+static const Animation henchmen_anim[1] = {
+	{2, (const u8[]){0, 0, 1, 1, 2, 2, 3, 3, 4, 4, ASCR_BACK, 1}}, //Left
+};
+
+static const Animation henchmen_anim2[1] = {
+	{2, (const u8[]){5, 5, 6, 6, 2, 2, 3, 3, 4, 4, ASCR_BACK, 1}}, //Left
 };
 
 //Henchmen functions
@@ -90,11 +100,13 @@ void Back_Week6_DrawBG(StageBack *back)
 		{
 			case 0:
 				Animatable_SetAnim(&this->hench_animatable, 0);
+				Animatable_SetAnim(&this->hench_animatable2, 0);
 				break;
 		}
 	}
+    
+	Animatable_Animate(&this->hench_animatable2, (void*)this, Week6_Henchmen_SetFrame);
 	Animatable_Animate(&this->hench_animatable, (void*)this, Week6_Henchmen_SetFrame);
-	
 	Week6_Henchmen_Draw(this, FIXED_DEC(100,1) - fx, FIXED_DEC(30,1) - fy);
 
 	//Draw foreground trees
@@ -326,6 +338,8 @@ StageBack *Back_Week6_New(void)
 	//Initialize henchmen state
 	Animatable_Init(&this->hench_animatable, henchmen_anim);
 	Animatable_SetAnim(&this->hench_animatable, 0);
+	Animatable_Init(&this->hench_animatable2, henchmen_anim2);
+	Animatable_SetAnim(&this->hench_animatable2, 0);
 	this->hench_frame = this->hench_tex_id = 0xFF; //Force art load
 
 	return (StageBack*)this;
