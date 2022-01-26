@@ -17,6 +17,7 @@ all: \
 	iso/bf/xmas.arc \
 	iso/xmasp/main.arc \
 	iso/monikap/main.arc \
+	iso/bigmpix/main.arc \
 	iso/duet/main.arc \
 	iso/spirit/main.arc \
 	iso/tank/main.arc \
@@ -34,7 +35,6 @@ all: \
 	iso/week4/hench.arc \
 	iso/week5/back.arc \
 	iso/week6/back.arc \
-	iso/week6/back3.tim \
 	iso/week7/back.arc
 
 iso/%.tim: iso/%.png
@@ -73,6 +73,8 @@ iso/xmasp/main.arc: iso/xmasp/idle0.tim iso/xmasp/idle1.tim iso/xmasp/idle2.tim 
 iso/monikap/main.arc: iso/monikap/monika0.tim iso/monikap/monika1.tim
 
 iso/duet/main.arc: iso/duet/duet0.tim iso/duet/duet1.tim iso/duet/duet2.tim iso/duet/duet3.tim iso/duet/duet4.tim iso/duet/duet5.tim
+
+iso/bigmpix/main.arc: iso/bigmpix/idle0.tim iso/bigmpix/idle1.tim iso/bigmpix/hit0.tim iso/bigmpix/hit1.tim iso/bigmpix/hit2.tim iso/bigmpix/hit3.tim iso/bigmpix/hit4.tim
 
 # Spirit
 iso/spirit/main.arc: iso/spirit/spirit0.tim iso/spirit/spirit1.tim

@@ -46,8 +46,8 @@ static const CharFrame char_duet_frame[] = {
 	{duet_ArcMain_duet1, {  0,   0,  97, 116}, { 33, 115}}, //4 idle 5
 	{duet_ArcMain_duet1, { 97,   0,  84, 113}, { 28, 112}}, //5 idle 6
 	
-	{duet_ArcMain_duet2, {  0, 114, 100, 113}, { 31, 111}}, //6 left 1
-	{duet_ArcMain_duet2, {100, 114, 101, 113}, { 31, 111}}, //7 left 2
+	{duet_ArcMain_duet2, {  0,   0, 80, 114}, { 34, 112}}, //6 left 1
+	{duet_ArcMain_duet2, { 80,   0, 80, 114}, { 34, 112}}, //7 left 2
 	
 	{duet_ArcMain_duet1, {  0, 116, 91, 111}, { 34, 110}}, //8 down 1
 	{duet_ArcMain_duet1, { 91, 113, 91, 111}, { 34, 110}}, //9 down 2
@@ -55,8 +55,8 @@ static const CharFrame char_duet_frame[] = {
 	{duet_ArcMain_duet3, {  0,   0, 81, 116}, { 31, 115}}, //10 up 1
 	{duet_ArcMain_duet3, { 81,   0, 81, 116}, { 31, 115}}, //11 up 2
 	
-	{duet_ArcMain_duet2, {  0,   0, 80, 114}, { 34, 112}}, //12 right 1
-	{duet_ArcMain_duet2, { 80,   0, 80, 114}, { 34, 112}}, //13 right 2
+	{duet_ArcMain_duet2, {  0, 114, 100, 113}, { 31, 111}}, //12 right 1
+	{duet_ArcMain_duet2, {100, 114, 101, 113}, { 31, 111}}, //13 right 2
 
 	//alt
 	{duet_ArcMain_duet3, { 93, 117, 95, 115}, { 31, 114}}, //14 leftb 1
@@ -83,6 +83,19 @@ static const Animation char_duet_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 12, 13, ASCR_BACK, 0}},             //CharAnim_Right
 	{2, (const u8[]){ 20, 21, ASCR_BACK, 0}},       //CharAnim_RightAlt
 };
+
+static const Animation char_duet_animb[CharAnim_Max] = {
+	{2, (const u8[]){ 0, 0, 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{2, (const u8[]){ 14, 15, ASCR_BACK, 0}},             //CharAnim_Left
+	{2, (const u8[]){ 14, 15, ASCR_BACK, 0}},       //CharAnim_LeftAlt
+	{2, (const u8[]){ 16, 17, ASCR_BACK, 0}},             //CharAnim_Down
+	{2, (const u8[]){ 16, 17, ASCR_BACK, 0}},       //CharAnim_DownAlt
+	{2, (const u8[]){ 18, 19, ASCR_BACK, 0}},             //CharAnim_Up
+	{2, (const u8[]){ 18, 19, ASCR_BACK, 0}},       //CharAnim_UpAlt
+	{2, (const u8[]){ 20, 21, ASCR_BACK, 0}},             //CharAnim_Right
+	{2, (const u8[]){ 20, 21, ASCR_BACK, 0}},       //CharAnim_RightAlt
+};
+
 
 //Dad character functions
 void Char_duet_SetFrame(void *user, u8 frame)
@@ -115,7 +128,12 @@ void Char_duet_Tick(Character *character)
 		Character_PerformIdle(character);
 	
 	//Animate and draw
-	Animatable_Animate(&character->animatable, (void*)this, Char_duet_SetFrame);
+	if (stage.stage_id == StageId_1_2 && stage.song_step >= 712 && stage.song_step <= 724)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_duet_SetFrame);
+	else if (stage.stage_id == StageId_1_2 && stage.song_step >= 745 && stage.song_step <= 756)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_duet_SetFrame);
+	else
+		Animatable_Animate(&character->animatable, (void*)this, Char_duet_SetFrame);
 	Character_Draw(character, &this->tex, &char_duet_frame[this->frame]);
 }
 
@@ -123,6 +141,7 @@ void Char_duet_SetAnim(Character *character, u8 anim)
 {
 	//Set animation
 	Animatable_SetAnim(&character->animatable, anim);
+	Animatable_SetAnim(&character->animatableb, anim);
 	Character_CheckStartSing(character);
 }
 
@@ -151,6 +170,7 @@ Character *Char_duet_New(fixed_t x, fixed_t y)
 	this->character.free = Char_duet_Free;
 	
 	Animatable_Init(&this->character.animatable, char_duet_anim);
+	Animatable_Init(&this->character.animatableb, char_duet_animb);
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information

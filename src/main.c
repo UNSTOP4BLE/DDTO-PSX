@@ -51,7 +51,7 @@ static u8 malloc_heap[0x1B0000];
 int main(int argc, char **argv)
 {
 	//botplay
-	stage.botplay = 1;
+	//stage.botplay = 1;
 
 	//Remember arguments
 	my_argc = argc;
