@@ -1060,7 +1060,7 @@ void Menu_Tick(void)
 				{OptType_Enum,    "GAMEMODE", &stage.mode, {.spec_enum = {COUNT_OF(gamemode_strs), gamemode_strs}}},
 				{OptType_Boolean, "GHOST TAP", &stage.ghost, {.spec_boolean = {0}}},
 				{OptType_Boolean, "DOWNSCROLL", &stage.downscroll, {.spec_boolean = {0}}},
-				{OptType_Boolean, "MIDDLESCROLL EXP", &stage.middlescroll, {.spec_boolean = {0}}},
+				{OptType_Boolean, "MIDDLESCROLL", &stage.middlescroll, {.spec_boolean = {0}}},
 				{OptType_Boolean, "BOTPLAY", &stage.botplay, {.spec_boolean = {0}}},
 			};
 			if (stage.mode == StageMode_2P)

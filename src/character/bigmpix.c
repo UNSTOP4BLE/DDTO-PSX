@@ -14,8 +14,13 @@
 //Dad character structure
 enum
 {
-	bigmpix_ArcMain_bigmpix0,
-	bigmpix_ArcMain_bigmpix1,
+	bigmpix_ArcMain_idle0,
+	bigmpix_ArcMain_idle1,
+	bigmpix_ArcMain_hit0,
+	bigmpix_ArcMain_hit1,
+	bigmpix_ArcMain_hit2,
+	bigmpix_ArcMain_hit3,
+	bigmpix_ArcMain_hit4,
 	
 	bigmpix_Arc_Max,
 };
@@ -35,28 +40,28 @@ typedef struct
 
 //Dad character definitions
 static const CharFrame char_bigmpix_frame[] = {
-	{bigmpix_ArcMain_bigmpix0, {  0,   0, 76, 118}, { 35, 118}}, //0 idle 1
-	{bigmpix_ArcMain_bigmpix0, { 76,   0, 75, 114}, { 33, 114}}, //1 idle 2
-	{bigmpix_ArcMain_bigmpix0, {151,   0, 76, 117}, { 35, 117}}, //2 idle 3
-	{bigmpix_ArcMain_bigmpix0, {  0, 118, 76, 120}, { 35, 120}}, //3 idle 4
-	{bigmpix_ArcMain_bigmpix0, { 76, 114, 79, 114}, { 38, 114}}, //4 idle 5
-	{bigmpix_ArcMain_bigmpix0, {155, 117, 76, 117}, { 35, 117}}, //5 idle 6
+	{bigmpix_ArcMain_idle0, {  0,   0, 82, 129}, { 82, 117}}, //0 idle 1
+	{bigmpix_ArcMain_idle0, { 82,   0, 82, 130}, { 82, 118}}, //1 idle 2
+	{bigmpix_ArcMain_idle0, {164,   0, 83, 124}, { 83, 112}}, //2 idle 3
+	{bigmpix_ArcMain_idle1, {  0,   0, 82, 128}, { 82, 116}}, //3 idle 4
+	{bigmpix_ArcMain_idle1, { 82,   0, 82, 129}, { 82, 117}}, //4 idle 5
+	{bigmpix_ArcMain_idle1, {164,   0, 82, 128}, { 82, 116}}, //5 idle 6
 	
-	{bigmpix_ArcMain_bigmpix1, {122,   0, 64, 114}, { 25, 114}}, //6 left 1
-	{bigmpix_ArcMain_bigmpix1, {186,   0, 63, 114}, { 25, 114}}, //7 left 2
+	{bigmpix_ArcMain_hit0, {164,   0, 87, 126}, { 87, 114}}, //6 left 1
+	{bigmpix_ArcMain_hit0, {  0, 116, 85, 128}, { 85, 116}}, //7 left 2
 	
-	{bigmpix_ArcMain_bigmpix1, {  0,   0, 61, 99}, { 35, 99}}, //8 down 1
-	{bigmpix_ArcMain_bigmpix1, { 61,   0, 61, 100}, { 35, 100}}, //9 down 2
+	{bigmpix_ArcMain_hit0, {  0,   0, 82, 116}, { 82, 104}}, //8 down 1
+	{bigmpix_ArcMain_hit0, { 82,   0, 82, 119}, { 82, 107}}, //9 down 2
 	
-	{bigmpix_ArcMain_bigmpix1, {150, 114, 46, 116}, { 23, 116}}, //10 up 1
-	{bigmpix_ArcMain_bigmpix1, {196, 114, 47, 116}, { 24, 116}}, //11 up 2
+	{bigmpix_ArcMain_hit0, { 85, 119, 82, 120}, { 82, 118}}, //10 up 1
+	{bigmpix_ArcMain_hit0, {167, 126, 82, 119}, { 82, 116}}, //11 up 2
 	
-	{bigmpix_ArcMain_bigmpix1, {  0,  99, 75, 110}, { 29, 110}}, //12 right 1
-	{bigmpix_ArcMain_bigmpix1, { 75, 114, 75, 110}, { 27, 110}}, //13 right 2
+	{bigmpix_ArcMain_hit1, {  0,   0, 92, 130}, { 87, 118}}, //12 right 1
+	{bigmpix_ArcMain_hit1, { 92,   0, 93, 129}, { 88, 117}}, //13 right 2
 };
 
 static const Animation char_bigmpix_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 4, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
 	{2, (const u8[]){ 6,  7, ASCR_BACK, 0}},             //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 8,  9, ASCR_BACK, 0}},             //CharAnim_Down
