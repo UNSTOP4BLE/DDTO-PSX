@@ -160,6 +160,7 @@
 				<file name = "bf.arc" type = "data" source = "iso/bf/main.arc"/>
 				<file name = "bfdead.arc" type = "data" source = "iso/bf/dead.arc"/>
 				<file name = "bfweeb.arc" type = "data" source = "iso/bf/weeb.arc"/>
+				<file name = "weebd.arc" type = "data" source = "iso/bf/weebd.arc"/>
 				
 				<!-- Dad assets -->
 				<file name = "dad.arc" type = "data" source = "iso/dad/main.arc"/>

@@ -379,10 +379,7 @@ static void Stage_NoteCheck(PlayerState *this, u8 type)
 			//Hit the mine
 			note->type |= NOTE_FLAG_HIT;
 			
-			if (stage.stage_id == StageId_Clwn_4)
 				this->health = -0x7000;
-			else
-				this->health -= 2000;
 			if (this->character->spec & CHAR_SPEC_MISSANIM)
 				this->character->set_anim(this->character, note_anims[type & 0x3][2]);
 			else
