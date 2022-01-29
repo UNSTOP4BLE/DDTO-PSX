@@ -1512,7 +1512,6 @@ void Stage_Tick(void)
 	{
 		case StageState_Play:
 		{   
-
 			if (stage.middlescroll)
 				arrowposx = -80;
 			else
@@ -1887,30 +1886,6 @@ void Stage_Tick(void)
 				Stage_DrawTex(&stage.tex_hud1, &health_fill, &health_dst, stage.bump);
 				health_dst.w = health_back.w << FIXED_SHIFT;
 				Stage_DrawTex(&stage.tex_hud1, &health_back, &health_dst, stage.bump);
-			}
-			
-			//Hardcoded stage stuff
-			switch (stage.stage_id)
-			{
-				case StageId_1_2: //Fresh GF bop
-					switch (stage.song_step)
-					{
-						case 16 << 2:
-							stage.gf_speed = 2 << 2;
-							break;
-						case 48 << 2:
-							stage.gf_speed = 1 << 2;
-							break;
-						case 80 << 2:
-							stage.gf_speed = 2 << 2;
-							break;
-						case 112 << 2:
-							stage.gf_speed = 1 << 2;
-							break;
-					}
-					break;
-				default:
-					break;
 			}
 			
 			//Draw stage foreground

@@ -9,7 +9,6 @@ all: \
 	iso/bf/main.arc \
 	iso/bf/dead.arc \
 	iso/bf/weeb.arc \
-	iso/bf/weebd.arc \
 	iso/dad/main.arc \
 	iso/spook/main.arc \
 	iso/pico/main.arc \

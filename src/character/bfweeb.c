@@ -74,54 +74,54 @@ static const CharFrame char_bfweeb_frame[] = {
 	{BFWeeb_ArcMain_Weeb1, {175,   0,  54,  56}, { 22,  52}}, //19 right miss 1
 	{BFWeeb_ArcMain_Weeb1, {  0,  54,  55,  56}, { 22,  52}}, //20 right miss 2
 
-	{BFWeeb_ArcMain_Weeb1, { 56,  62,  64,  60}, { 22,  52}}, //21 death weeb 1 1
-	{BFWeeb_ArcMain_Weeb1, {120,  64,  73,  60}, { 23,  52}}, //22 death weeb 1 2
-	{BFWeeb_ArcMain_Weeb1, {  0, 120,  68,  58}, { 23,  50}}, //23 death weeb 1 3
-	{BFWeeb_ArcMain_Weeb1, { 69, 123,  73,  58}, { 27,  50}}, //24 death weeb 1 4
-	{BFWeeb_ArcMain_Weeb1, {144, 125,  71,  58}, { 20,  50}}, //25 death weeb 1 5
-	{BFWeeb_ArcMain_Weeb1, {  0, 179,  58,  58}, { 19,  50}}, //26 death weeb 1 6
+	{BFWeeb_ArcMain_Weeb1, { 56,  62,  64,  60}, { 56 - 25,  60 - 3}}, //21 death weeb 1 1
+	{BFWeeb_ArcMain_Weeb1, {120,  64,  73,  60}, { 57 - 25,  60 - 3}}, //22 death weeb 1 2
+	{BFWeeb_ArcMain_Weeb1, {  0, 120,  68,  58}, { 57 - 25,  58 - 3}}, //23 death weeb 1 3
+	{BFWeeb_ArcMain_Weeb1, { 69, 123,  73,  58}, { 61 - 25,  58 - 3}}, //24 death weeb 1 4
+	{BFWeeb_ArcMain_Weeb1, {144, 125,  71,  58}, { 58 - 25,  58 - 3}}, //25 death weeb 1 5
+	{BFWeeb_ArcMain_Weeb1, {  0, 179,  58,  58}, { 53 - 25,  58 - 3}}, //26 death weeb 1 6
 
-	{BFWeeb_ArcMain_Weeb2, {  4,   1,  58,  58}, { 22,  52}}, //27 death weeb 2 1
-	{BFWeeb_ArcMain_Weeb2, { 64,   1,  58,  58}, { 23,  52}}, //28 death weeb 2 2
-	{BFWeeb_ArcMain_Weeb2, {126,   1,  58,  58}, { 23,  50}}, //29 death weeb 2 3
-	{BFWeeb_ArcMain_Weeb2, {188,   0,  61,  64}, { 27,  50}}, //30 death weeb 2 4
-	{BFWeeb_ArcMain_Weeb2, {  3,  65,  59,  60}, { 22,  52}}, //31 death weeb 2 5
-	{BFWeeb_ArcMain_Weeb2, { 63,  65,  58,  63}, { 22,  52}}, //32 death weeb 2 6
-	{BFWeeb_ArcMain_Weeb2, {122,  65,  58,  62}, { 22,  52}}, //33 death weeb 2 7
-	{BFWeeb_ArcMain_Weeb2, {186,  65,  58,  62}, { 22,  52}}, //34 death weeb 2 8
-	{BFWeeb_ArcMain_Weeb2, {  4, 129,  58,  62}, { 22,  52}}, //35 death weeb 2 9
-	{BFWeeb_ArcMain_Weeb2, { 63, 129,  58,  62}, { 22,  52}}, //36 death weeb 2 10
-	{BFWeeb_ArcMain_Weeb2, {122, 129,  58,  62}, { 22,  52}}, //37 death weeb 2 11
-	{BFWeeb_ArcMain_Weeb2, {184, 129,  58,  62}, { 22,  52}}, //38 death weeb 2 12
-	{BFWeeb_ArcMain_Weeb2, {  4, 193,  58,  62}, { 22,  52}}, //39 death weeb 2 13
-	{BFWeeb_ArcMain_Weeb2, { 63, 193,  58,  62}, { 22,  52}}, //40 death weeb 2 14
-	{BFWeeb_ArcMain_Weeb2, {122, 193,  58,  62}, { 22,  52}}, //41 death weeb 2 15
-	{BFWeeb_ArcMain_Weeb2, {181, 193,  58,  62}, { 22,  52}}, //42 death weeb 2 16
+	{BFWeeb_ArcMain_Weeb2, {  4,   1,  58,  58}, { 53 - 25,  58 - 3}}, //27 death weeb 2 1
+	{BFWeeb_ArcMain_Weeb2, { 64,   1,  58,  58}, { 53 - 25,  58 - 3}}, //28 death weeb 2 2
+	{BFWeeb_ArcMain_Weeb2, {126,   1,  58,  58}, { 53 - 25,  58 - 3}}, //29 death weeb 2 3
+	{BFWeeb_ArcMain_Weeb2, {188,   0,  61,  64}, { 56 - 25,  58 - 3}}, //30 death weeb 2 4
+	{BFWeeb_ArcMain_Weeb2, {  3,  65,  59,  60}, { 54 - 25,  58 - 3}}, //31 death weeb 2 5
+	{BFWeeb_ArcMain_Weeb2, { 63,  65,  58,  63}, { 53 - 25,  58 - 3}}, //32 death weeb 2 6
+	{BFWeeb_ArcMain_Weeb2, {122,  65,  58,  62}, { 53 - 25,  58 - 3}}, //33 death weeb 2 7
+	{BFWeeb_ArcMain_Weeb2, {186,  65,  58,  62}, { 53 - 25,  58 - 3}}, //34 death weeb 2 8
+	{BFWeeb_ArcMain_Weeb2, {  4, 129,  58,  62}, { 53 - 25,  58 - 3}}, //35 death weeb 2 9
+	{BFWeeb_ArcMain_Weeb2, { 63, 129,  58,  62}, { 53 - 25,  58 - 3}}, //36 death weeb 2 10
+	{BFWeeb_ArcMain_Weeb2, {122, 129,  58,  62}, { 53 - 25,  58 - 3}}, //37 death weeb 2 11
+	{BFWeeb_ArcMain_Weeb2, {184, 129,  58,  62}, { 53 - 25,  58 - 3}}, //38 death weeb 2 12
+	{BFWeeb_ArcMain_Weeb2, {  4, 193,  58,  62}, { 53 - 25,  58 - 3}}, //39 death weeb 2 13
+	{BFWeeb_ArcMain_Weeb2, { 63, 193,  58,  62}, { 53 - 25,  58 - 3}}, //40 death weeb 2 14
+	{BFWeeb_ArcMain_Weeb2, {122, 193,  58,  62}, { 53 - 25,  58 - 3}}, //41 death weeb 2 15
+	{BFWeeb_ArcMain_Weeb2, {181, 193,  58,  62}, { 53 - 25,  58 - 3}}, //42 death weeb 2 16
 
-	{BFWeeb_ArcMain_Weeb3, {  4,   1,  58,  62}, { 22,  52}}, //43 death weeb 2 1
-	{BFWeeb_ArcMain_Weeb3, { 64,   1,  58,  62}, { 22,  52}}, //44 death weeb 2 2
-	{BFWeeb_ArcMain_Weeb3, {126,   1,  58,  62}, { 22,  52}}, //45 death weeb 2 3
-	{BFWeeb_ArcMain_Weeb3, {191,   1,  58,  62}, { 22,  52}}, //46 death weeb 2 4
-	{BFWeeb_ArcMain_Weeb3, {  4,  65,  58,  62}, { 22,  52}}, //47 death weeb 2 5
-	{BFWeeb_ArcMain_Weeb3, { 63,  65,  58,  62}, { 22,  52}}, //48 death weeb 2 6
-	{BFWeeb_ArcMain_Weeb3, {122,  65,  58,  62}, { 22,  52}}, //49 death weeb 2 7
-	{BFWeeb_ArcMain_Weeb3, {186,  65,  58,  62}, { 22,  52}}, //50 death weeb 2 8
-	{BFWeeb_ArcMain_Weeb3, {  4, 129,  58,  62}, { 22,  52}}, //51 death weeb 2 9
-	{BFWeeb_ArcMain_Weeb3, { 63, 129,  58,  62}, { 22,  52}}, //52 death weeb 2 10
-	{BFWeeb_ArcMain_Weeb3, {122, 129,  58,  62}, { 22,  52}}, //53 death weeb 2 11
-	{BFWeeb_ArcMain_Weeb3, {184, 129,  58,  62}, { 22,  52}}, //54 death weeb 2 12
-	{BFWeeb_ArcMain_Weeb3, {  4, 193,  58,  62}, { 22,  52}}, //55 death weeb 2 13
-	{BFWeeb_ArcMain_Weeb3, { 63, 193,  58,  62}, { 22,  52}}, //56 death weeb 2 14
-	{BFWeeb_ArcMain_Weeb3, {122, 193,  58,  62}, { 22,  52}}, //57 death weeb 2 15
-	{BFWeeb_ArcMain_Weeb3, {181, 193,  58,  62}, { 22,  52}}, //58 death weeb 2 16
+	{BFWeeb_ArcMain_Weeb3, {  4,   1,  58,  62}, { 53 - 25,  58 - 3}}, //43 death weeb 2 1
+	{BFWeeb_ArcMain_Weeb3, { 64,   1,  58,  62}, { 53 - 25,  58 - 3}}, //44 death weeb 2 2
+	{BFWeeb_ArcMain_Weeb3, {126,   1,  58,  62}, { 53 - 25,  58 - 3}}, //45 death weeb 2 3
+	{BFWeeb_ArcMain_Weeb3, {191,   1,  58,  62}, { 53 - 25,  58 - 3}}, //46 death weeb 2 4
+	{BFWeeb_ArcMain_Weeb3, {  4,  65,  58,  62}, { 53 - 25,  58 - 3}}, //47 death weeb 2 5
+	{BFWeeb_ArcMain_Weeb3, { 63,  65,  58,  62}, { 53 - 25,  58 - 3}}, //48 death weeb 2 6
+	{BFWeeb_ArcMain_Weeb3, {122,  65,  58,  62}, { 53 - 25,  58 - 3}}, //49 death weeb 2 7
+	{BFWeeb_ArcMain_Weeb3, {186,  65,  58,  62}, { 53 - 25,  58 - 3}}, //50 death weeb 2 8
+	{BFWeeb_ArcMain_Weeb3, {  4, 129,  58,  62}, { 53 - 25,  58 - 3}}, //51 death weeb 2 9
+	{BFWeeb_ArcMain_Weeb3, { 63, 129,  58,  62}, { 53 - 25,  58 - 3}}, //52 death weeb 2 10
+	{BFWeeb_ArcMain_Weeb3, {122, 129,  58,  62}, { 53 - 25,  58 - 3}}, //53 death weeb 2 11
+	{BFWeeb_ArcMain_Weeb3, {184, 129,  58,  62}, { 53 - 25,  58 - 3}}, //54 death weeb 2 12
+	{BFWeeb_ArcMain_Weeb3, {  4, 193,  58,  62}, { 53 - 25,  58 - 3}}, //55 death weeb 2 13
+	{BFWeeb_ArcMain_Weeb3, { 63, 193,  58,  62}, { 53 - 25,  58 - 3}}, //56 death weeb 2 14
+	{BFWeeb_ArcMain_Weeb3, {122, 193,  58,  62}, { 53 - 25,  58 - 3}}, //57 death weeb 2 15
+	{BFWeeb_ArcMain_Weeb3, {181, 193,  58,  62}, { 53 - 25,  58 - 3}}, //58 death weeb 2 16
 
-	{BFWeeb_ArcMain_Weeb4, {  5,   2,  58,  62}, { 22,  52}}, //59 death weeb 2 1
-	{BFWeeb_ArcMain_Weeb4, { 65,   2,  58,  62}, { 22,  52}}, //60 death weeb 2 2
-	{BFWeeb_ArcMain_Weeb4, {127,   2,  58,  62}, { 22,  52}}, //61 death weeb 2 3
-	{BFWeeb_ArcMain_Weeb4, {192,   2,  58,  62}, { 22,  52}}, //62 death weeb 2 4
-	{BFWeeb_ArcMain_Weeb4, {  5,  66,  58, 62 }, { 22,  52}}, //63 death weeb 2 5
-	{BFWeeb_ArcMain_Weeb4, { 64,  66,  58, 62 }, { 22,  52}}, //64 death weeb 2 6
-	{BFWeeb_ArcMain_Weeb4, {123,  66,  58, 62 }, { 22,  52}}, //65 death weeb 2 7
+	{BFWeeb_ArcMain_Weeb4, {  5,   2,  58,  62}, { 53 - 25,  58 - 3}}, //59 death weeb 2 1
+	{BFWeeb_ArcMain_Weeb4, { 65,   2,  58,  62}, { 53 - 25,  58 - 3}}, //60 death weeb 2 2
+	{BFWeeb_ArcMain_Weeb4, {127,   2,  58,  62}, { 53 - 25,  58 - 3}}, //61 death weeb 2 3
+	{BFWeeb_ArcMain_Weeb4, {192,   2,  58,  62}, { 53 - 25,  58 - 3}}, //62 death weeb 2 4
+	{BFWeeb_ArcMain_Weeb4, {  5,  66,  58,  62}, { 53 - 25,  58 - 3}}, //63 death weeb 2 5
+	{BFWeeb_ArcMain_Weeb4, { 64,  66,  58,  62}, { 53 - 25,  58 - 3}}, //64 death weeb 2 6
+	{BFWeeb_ArcMain_Weeb4, {123,  66,  58,  62}, { 53 - 25,  58 - 3}}, //65 death weeb 2 7
 
 };
 
@@ -270,7 +270,7 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\BFWEEB.ARC;1");
 	this->arc_dead = NULL;
-	IO_FindFile(&this->file_dead_arc, "\\CHAR\\WEEBD.ARC;1");
+	IO_FindFile(&this->file_dead_arc, "\\CHAR\\BFWEEB.ARC;1");
 	
 	const char **pathp = (const char *[]){
 		"weeb0.tim",  //BFWeeb_ArcMain_Weeb0
