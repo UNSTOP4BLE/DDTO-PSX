@@ -17,16 +17,13 @@ enum
 {
 	BFWeeb_ArcMain_Weeb0,
 	BFWeeb_ArcMain_Weeb1,
+	BFWeeb_ArcMain_Weeb2,
+	BFWeeb_ArcMain_Weeb3,
+	BFWeeb_ArcMain_Weeb4,
 	
 	BFWeeb_ArcMain_Max,
 };
 
-enum
-{
-	BFWeeb_ArcDead_DeadW0,
-	
-	BFWeeb_ArcDead_Max,
-};
 
 #define BFWeeb_Arc_Max BFWeeb_ArcMain_Max
 
@@ -76,6 +73,56 @@ static const CharFrame char_bfweeb_frame[] = {
 	
 	{BFWeeb_ArcMain_Weeb1, {175,   0,  54,  56}, { 22,  52}}, //19 right miss 1
 	{BFWeeb_ArcMain_Weeb1, {  0,  54,  55,  56}, { 22,  52}}, //20 right miss 2
+
+	{BFWeeb_ArcMain_Weeb1, { 56,  62,  64,  60}, { 22,  52}}, //21 death weeb 1 1
+	{BFWeeb_ArcMain_Weeb1, {120,  64,  73,  60}, { 23,  52}}, //22 death weeb 1 2
+	{BFWeeb_ArcMain_Weeb1, {  0, 120,  68,  58}, { 23,  50}}, //23 death weeb 1 3
+	{BFWeeb_ArcMain_Weeb1, { 69, 123,  73,  58}, { 27,  50}}, //24 death weeb 1 4
+	{BFWeeb_ArcMain_Weeb1, {144, 125,  71,  58}, { 20,  50}}, //25 death weeb 1 5
+	{BFWeeb_ArcMain_Weeb1, {  0, 179,  58,  58}, { 19,  50}}, //26 death weeb 1 6
+
+	{BFWeeb_ArcMain_Weeb2, {  4,   1,  58,  58}, { 22,  52}}, //27 death weeb 2 1
+	{BFWeeb_ArcMain_Weeb2, { 64,   1,  58,  58}, { 23,  52}}, //28 death weeb 2 2
+	{BFWeeb_ArcMain_Weeb2, {126,   1,  58,  58}, { 23,  50}}, //29 death weeb 2 3
+	{BFWeeb_ArcMain_Weeb2, {188,   0,  61,  64}, { 27,  50}}, //30 death weeb 2 4
+	{BFWeeb_ArcMain_Weeb2, {  3,  65,  59,  60}, { 22,  52}}, //31 death weeb 2 5
+	{BFWeeb_ArcMain_Weeb2, { 63,  65,  58,  63}, { 22,  52}}, //32 death weeb 2 6
+	{BFWeeb_ArcMain_Weeb2, {122,  65,  58,  62}, { 22,  52}}, //33 death weeb 2 7
+	{BFWeeb_ArcMain_Weeb2, {186,  65,  58,  62}, { 22,  52}}, //34 death weeb 2 8
+	{BFWeeb_ArcMain_Weeb2, {  4, 129,  58,  62}, { 22,  52}}, //35 death weeb 2 9
+	{BFWeeb_ArcMain_Weeb2, { 63, 129,  58,  62}, { 22,  52}}, //36 death weeb 2 10
+	{BFWeeb_ArcMain_Weeb2, {122, 129,  58,  62}, { 22,  52}}, //37 death weeb 2 11
+	{BFWeeb_ArcMain_Weeb2, {184, 129,  58,  62}, { 22,  52}}, //38 death weeb 2 12
+	{BFWeeb_ArcMain_Weeb2, {  4, 193,  58,  62}, { 22,  52}}, //39 death weeb 2 13
+	{BFWeeb_ArcMain_Weeb2, { 63, 193,  58,  62}, { 22,  52}}, //40 death weeb 2 14
+	{BFWeeb_ArcMain_Weeb2, {122, 193,  58,  62}, { 22,  52}}, //41 death weeb 2 15
+	{BFWeeb_ArcMain_Weeb2, {181, 193,  58,  62}, { 22,  52}}, //42 death weeb 2 16
+
+	{BFWeeb_ArcMain_Weeb3, {  4,   1,  58,  62}, { 22,  52}}, //43 death weeb 2 1
+	{BFWeeb_ArcMain_Weeb3, { 64,   1,  58,  62}, { 22,  52}}, //44 death weeb 2 2
+	{BFWeeb_ArcMain_Weeb3, {126,   1,  58,  62}, { 22,  52}}, //45 death weeb 2 3
+	{BFWeeb_ArcMain_Weeb3, {191,   1,  58,  62}, { 22,  52}}, //46 death weeb 2 4
+	{BFWeeb_ArcMain_Weeb3, {  4,  65,  58,  62}, { 22,  52}}, //47 death weeb 2 5
+	{BFWeeb_ArcMain_Weeb3, { 63,  65,  58,  62}, { 22,  52}}, //48 death weeb 2 6
+	{BFWeeb_ArcMain_Weeb3, {122,  65,  58,  62}, { 22,  52}}, //49 death weeb 2 7
+	{BFWeeb_ArcMain_Weeb3, {186,  65,  58,  62}, { 22,  52}}, //50 death weeb 2 8
+	{BFWeeb_ArcMain_Weeb3, {  4, 129,  58,  62}, { 22,  52}}, //51 death weeb 2 9
+	{BFWeeb_ArcMain_Weeb3, { 63, 129,  58,  62}, { 22,  52}}, //52 death weeb 2 10
+	{BFWeeb_ArcMain_Weeb3, {122, 129,  58,  62}, { 22,  52}}, //53 death weeb 2 11
+	{BFWeeb_ArcMain_Weeb3, {184, 129,  58,  62}, { 22,  52}}, //54 death weeb 2 12
+	{BFWeeb_ArcMain_Weeb3, {  4, 193,  58,  62}, { 22,  52}}, //55 death weeb 2 13
+	{BFWeeb_ArcMain_Weeb3, { 63, 193,  58,  62}, { 22,  52}}, //56 death weeb 2 14
+	{BFWeeb_ArcMain_Weeb3, {122, 193,  58,  62}, { 22,  52}}, //57 death weeb 2 15
+	{BFWeeb_ArcMain_Weeb3, {181, 193,  58,  62}, { 22,  52}}, //58 death weeb 2 16
+
+	{BFWeeb_ArcMain_Weeb4, {  5,   2,  58,  62}, { 22,  52}}, //59 death weeb 2 1
+	{BFWeeb_ArcMain_Weeb4, { 65,   2,  58,  62}, { 22,  52}}, //60 death weeb 2 2
+	{BFWeeb_ArcMain_Weeb4, {127,   2,  58,  62}, { 22,  52}}, //61 death weeb 2 3
+	{BFWeeb_ArcMain_Weeb4, {192,   2,  58,  62}, { 22,  52}}, //62 death weeb 2 4
+	{BFWeeb_ArcMain_Weeb4, {  5,  66,  58, 62 }, { 22,  52}}, //63 death weeb 2 5
+	{BFWeeb_ArcMain_Weeb4, { 64,  66,  58, 62 }, { 22,  52}}, //64 death weeb 2 6
+	{BFWeeb_ArcMain_Weeb4, {123,  66,  58, 62 }, { 22,  52}}, //65 death weeb 2 7
+
 };
 
 static const Animation char_bfweeb_anim[PlayerAnim_Max] = {
@@ -97,13 +144,15 @@ static const Animation char_bfweeb_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){20, 21, 22, ASCR_BACK, 1}},        //PlayerAnim_Peace
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //PlayerAnim_Sweat
 	
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
-	{2, (const u8[]){ 0,  1,  2,  3, 4, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){21, 22, 23, 24, 25, 26, ASCR_CHGANI, PlayerAnim_Dead1}}, //CharAnim_Idle
+	{2, (const u8[]){26, ASCR_REPEAT, 1}}, //CharAnim_Idle
+	{2, (const u8[]){27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58,  ASCR_CHGANI, PlayerAnim_Dead3}}, //CharAnim_Idle
+	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_BACK, 1}}, //CharAnim_Idle
+	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}},             //PlayerAnim_Dead4
+	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}}, 
+
+	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}},
+	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}},
 };
 
 //Boyfriend Weeb player functions
@@ -174,23 +223,6 @@ void Char_BFWeeb_SetAnim(Character *character, u8 anim)
 			this->arc_dead = IO_AsyncReadFile(&this->file_dead_arc);
 			character->focus_x = FIXED_DEC(0,1);
 			break;
-		case PlayerAnim_Dead2:
-			//Unload main.arc
-			Mem_Free(this->arc_main);
-			this->arc_main = this->arc_dead;
-			this->arc_dead = NULL;
-			
-			//Find dead.arc files
-			const char **pathp = (const char *[]){
-				"weeb2.tim", //BFWeeb_ArcDead_DeadW0
-				"weeb3.tim", //BFWeeb_ArcDead_DeadW0
-				"weeb4.tim", //BFWeeb_ArcDead_DeadW0
-				NULL
-			};
-			IO_Data *arc_ptr = this->arc_ptr;
-			for (; *pathp != NULL; pathp++)
-				*arc_ptr++ = Archive_Find(this->arc_main, *pathp);
-			break;
 	}
 	
 	//Set animation
@@ -243,6 +275,9 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 	const char **pathp = (const char *[]){
 		"weeb0.tim",  //BFWeeb_ArcMain_Weeb0
 		"weeb1.tim",  //BFWeeb_ArcMain_Weeb1
+		"weeb2.tim", //BFWeeb_ArcDead_DeadW0
+		"weeb3.tim", 
+		"weeb4.tim", 
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;
