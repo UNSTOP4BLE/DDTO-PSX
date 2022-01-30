@@ -20,6 +20,8 @@ enum
 	BFWeeb_ArcMain_Weeb2,
 	BFWeeb_ArcMain_Weeb3,
 	BFWeeb_ArcMain_Weeb4,
+	BFWeeb_ArcMain_Weeb5,
+	BF_ArcMain_Retry, //Retry prompt
 	
 	BFWeeb_ArcMain_Max,
 };
@@ -37,7 +39,7 @@ typedef struct
 	CdlFILE file_dead_arc; //dead.arc file position
 	IO_Data arc_ptr[BFWeeb_Arc_Max];
 	
-	Gfx_Tex tex;
+	Gfx_Tex tex, tex_retry;
 	u8 frame, tex_id;
 
 } Char_BF;
@@ -151,8 +153,8 @@ static const Animation char_bfweeb_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}},             //PlayerAnim_Dead4
 	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}}, 
 
-	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}},
-	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}},
+	{2, (const u8[]){21, 60, 61, 22, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead7}},
+	{2, (const u8[]){65, 65, 65, 65, 65, 65, 65, ASCR_BACK, 1}},
 };
 
 //Boyfriend Weeb player functions
@@ -205,6 +207,33 @@ void Char_BFWeeb_Tick(Character *character)
 			(stage.song_step & 0x7) == 0)
 			character->set_anim(character, CharAnim_Idle);
 	}
+	//Retry screen
+	if (character->animatable.anim >= PlayerAnim_Dead3)
+	{	
+		//Draw input options
+		u8 input_scale = 16;
+		if (input_scale > 16)
+			input_scale = 0;
+		
+		RECT button_src = {
+			 0, 96,
+			16, 16
+		};
+		RECT_FIXED button_dst = {
+			character->x - FIXED_DEC(24,1) - stage.camera.x,
+			character->y - FIXED_DEC(50,1) - stage.camera.y,
+			(FIXED_DEC(8,1) * input_scale) >> 4,
+			FIXED_DEC(8,1),
+		};
+		
+		//Cross - Retry
+		Stage_DrawTex(&this->tex_retry, &button_src, &button_dst, FIXED_MUL(stage.camera.zoom, stage.bump));
+		
+		//Circle - Blueball
+		button_src.x = 16;
+		button_dst.y += FIXED_DEC(26,1);
+		Stage_DrawTex(&this->tex_retry, &button_src, &button_dst, FIXED_MUL(stage.camera.zoom, stage.bump));
+	}
 	
 	//Animate and draw character
 	Animatable_Animate(&character->animatable, (void*)this, Char_BFWeeb_SetFrame);
@@ -222,6 +251,8 @@ void Char_BFWeeb_SetAnim(Character *character, u8 anim)
 			//Begin reading dead.arc and adjust focus
 			this->arc_dead = IO_AsyncReadFile(&this->file_dead_arc);
 			character->focus_x = FIXED_DEC(0,1);
+			//Load retry art
+			Gfx_LoadTex(&this->tex_retry, this->arc_ptr[BF_ArcMain_Retry], 0);
 			break;
 	}
 	
@@ -278,6 +309,8 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 		"weeb2.tim", //BFWeeb_ArcDead_DeadW0
 		"weeb3.tim", 
 		"weeb4.tim", 
+		"weeb5.tim", 
+		"retryw.tim", //BF_ArcDead_Retry
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

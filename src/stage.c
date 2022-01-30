@@ -1431,11 +1431,27 @@ void Stage_Tick(void)
 	#endif
 	{
 		//Return to menu when start is pressed
-		if (pad_state.press & PAD_START)
+		if (pad_state.press & PAD_START && stage.state == StageState_Play)
 		{
-			stage.trans = (stage.state == StageState_Play) ? StageTrans_Menu : StageTrans_Reload;
+			stage.trans = StageTrans_Menu;
 			Trans_Start();
 		}
+		//Reload the song when start or cross is pressed
+		else if (pad_state.press & (PAD_START | PAD_CROSS) && stage.state != StageState_Play)
+		{
+			stage.player->set_anim(stage.player, PlayerAnim_Dead6);
+		}
+		//Return to menu when circle is pressed
+		else if (pad_state.press & PAD_CIRCLE && stage.state != StageState_Play)
+		{
+			stage.trans = StageTrans_Menu;
+			Trans_Start();
+		}
+		if (stage.player->animatable.anim == PlayerAnim_Dead7)
+			{
+			stage.trans = StageTrans_Reload;
+			Trans_Start();
+			}
 	}
 	
 	if (Trans_Tick())
@@ -1984,7 +2000,7 @@ void Stage_Tick(void)
 			if (stage.player->animatable.anim == PlayerAnim_Dead3)
 			{
 				stage.state = StageState_DeadRetry;
-				Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);
+				(stage.stage_id >= StageId_1_1 && stage.stage_id <= StageId_1_3) ? Audio_PlayXA_Track(XA_GameOverPixel, 0x40, 2, true) : Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);
 			}
 			break;
 		}

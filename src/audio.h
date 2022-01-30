@@ -34,6 +34,7 @@ typedef enum
 	//MENU.XA
 	XA_GettinFreaky, //Gettin' Freaky
 	XA_GameOver,     //Game Over
+	XA_GameOverPixel,     //Game Over
 	//WEEK1A.XA
 	XA_Bopeebo, //Bopeebo
 	XA_Fresh,   //Fresh
