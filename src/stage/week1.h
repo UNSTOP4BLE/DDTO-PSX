@@ -9,7 +9,7 @@
 
 #include "../stage.h"
 
-//Week 1 functions
-StageBack *Back_Week1_New();
+//Week 6 functions
+StageBack *Back_week1_New();
 
 #endif

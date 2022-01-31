@@ -5,7 +5,7 @@
 		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week6_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(18,10),FIXED_DEC(2,1),FIXED_DEC(21,10)},
@@ -21,7 +21,7 @@
 		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week6_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(16,10),FIXED_DEC(18,10),FIXED_DEC(23,10)},
@@ -37,7 +37,7 @@
 		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week6_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(17,10),FIXED_DEC(2,1),FIXED_DEC(22,10)},
@@ -53,7 +53,7 @@
 		{NULL,           FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(1,1),FIXED_DEC(1,1),FIXED_DEC(1,1)},
@@ -65,11 +65,11 @@
 	{ //StageId_2_1 (Spookeez)
 		//Characters
 		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Spook_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week2_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(18,10),FIXED_DEC(2,1),FIXED_DEC(22,10)},
@@ -81,11 +81,11 @@
 	{ //StageId_2_2 (South)
 		//Characters
 		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Spook_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week2_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(19,10),FIXED_DEC(22,10),FIXED_DEC(25,10)},
@@ -97,11 +97,11 @@
 	{ //StageId_2_3 (Monster)
 		//Characters
 		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Spook_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week2_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(18,10),FIXED_DEC(22,10),FIXED_DEC(25,10)},
@@ -114,11 +114,11 @@
 	{ //StageId_3_1 (Pico)
 		//Characters
 		{Char_BF_New,     FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Pico_New, FIXED_DEC(-105,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New, FIXED_DEC(-105,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week3_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(21,10),FIXED_DEC(24,10),FIXED_DEC(24,10)},
@@ -130,11 +130,11 @@
 	{ //StageId_3_2 (Philly)
 		//Characters
 		{Char_BF_New,     FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Pico_New, FIXED_DEC(-105,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New, FIXED_DEC(-105,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week3_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(13,10),FIXED_DEC(16,10),FIXED_DEC(18,10)},
@@ -146,11 +146,11 @@
 	{ //StageId_3_3 (Blammed)
 		//Characters
 		{Char_BF_New,     FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_Pico_New, FIXED_DEC(-105,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New, FIXED_DEC(-105,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,      FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week3_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(19,10),FIXED_DEC(21,10),FIXED_DEC(23,10)},
@@ -163,11 +163,11 @@
 	{ //StageId_4_1 (Satin Panties)
 		//Characters
 		{Char_BF_New,   FIXED_DEC(120,1),   FIXED_DEC(40,1)},
-		{Char_Mom_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_monikapix_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,    FIXED_DEC(-6,1),   FIXED_DEC(-5,1)},
 		
 		//Stage background
-		Back_Week4_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(18,10),FIXED_DEC(18,10),FIXED_DEC(18,10)},
@@ -179,11 +179,11 @@
 	{ //StageId_4_2 (High)
 		//Characters
 		{Char_BF_New,   FIXED_DEC(120,1),   FIXED_DEC(40,1)},
-		{Char_Mom_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_monikapix_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,    FIXED_DEC(-6,1),   FIXED_DEC(-5,1)},
 		
 		//Stage background
-		Back_Week4_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(21,10),FIXED_DEC(24,10),FIXED_DEC(26,1)},
@@ -195,11 +195,11 @@
 	{ //StageId_4_3 (MILF)
 		//Characters
 		{Char_BF_New,   FIXED_DEC(120,1),   FIXED_DEC(40,1)},
-		{Char_Mom_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_monikapix_New, FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{Char_GF_New,    FIXED_DEC(-6,1),   FIXED_DEC(-5,1)},
 		
 		//Stage background
-		Back_Week4_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(2,1),FIXED_DEC(22,10),FIXED_DEC(25,10)},
@@ -215,7 +215,7 @@
 		{NULL,           FIXED_DEC(0,1),  FIXED_DEC(-10,1)},
 		
 		//Stage background
-		Back_Week1_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(1,1),FIXED_DEC(1,1),FIXED_DEC(1,1)},
@@ -226,12 +226,12 @@
 	},
 	{ //StageId_5_1 (Cocoa)
 		//Characters
-		{Char_XmasBF_New,  FIXED_DEC(90,1),   FIXED_DEC(85,1)},
-		{Char_XmasP_New, FIXED_DEC(-190,1),   FIXED_DEC(90,1)},
+		{Char_BF_New,  FIXED_DEC(90,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New, FIXED_DEC(-190,1),   FIXED_DEC(90,1)},
 		{NULL,              FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week5_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(21,10),FIXED_DEC(23,10),FIXED_DEC(25,10)},
@@ -242,12 +242,12 @@
 	},
 	{ //StageId_5_2 (Eggnog)
 		//Characters
-		{Char_XmasBF_New,  FIXED_DEC(90,1),   FIXED_DEC(85,1)},
-		{Char_XmasP_New, FIXED_DEC(-190,1),   FIXED_DEC(90,1)},
+		{Char_BF_New,  FIXED_DEC(90,1),   FIXED_DEC(85,1)},
+		{Char_monikapix_New, FIXED_DEC(-190,1),   FIXED_DEC(90,1)},
 		{NULL,              FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Week5_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(22,10),FIXED_DEC(25,10),FIXED_DEC(25,10)},
@@ -258,12 +258,12 @@
 	},
 	{ //StageId_5_3 (Winter Horrorland)
 		//Characters
-		{Char_XmasBF_New, FIXED_DEC(105,1),  FIXED_DEC(100,1)},
-		{Char_Dad_New,   FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
+		{Char_BF_New, FIXED_DEC(105,1),  FIXED_DEC(100,1)},
+		{Char_monikapix_New,   FIXED_DEC(-120,1),  FIXED_DEC(100,1)},
 		{NULL,              FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_Dummy_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(19,10),FIXED_DEC(24,10),FIXED_DEC(24,10)},
@@ -280,7 +280,7 @@
 		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week6_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(17,10),FIXED_DEC(19,10),FIXED_DEC(24,10)},
@@ -296,7 +296,7 @@
 		{Char_GFWeeb_New,    FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week6_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(3,1),FIXED_DEC(3,1),FIXED_DEC(3,1)},
@@ -312,7 +312,7 @@
 		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
 		
 		//Stage background
-		Back_Week6_New,
+		Back_week1_New,
 		
 		//Song info
 		{FIXED_DEC(11,10),FIXED_DEC(13,10),FIXED_DEC(15,10)},

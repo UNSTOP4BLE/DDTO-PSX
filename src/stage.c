@@ -71,28 +71,13 @@ int arrowposx,middletoggle;
 //Stage definitions
 #include "character/bf.h"
 #include "character/bfweeb.h"
-#include "character/dad.h"
-#include "character/spook.h"
-#include "character/pico.h"
-#include "character/mom.h"
-#include "character/xmasbf.h"
-#include "character/xmasp.h"
 #include "character/monikapix.h"
 #include "character/duet.h"
 #include "character/bigmpix.h"
-#include "character/tank.h"
 #include "character/gf.h"
 #include "character/gfweeb.h"
-#include "character/clucky.h"
 
-#include "stage/dummy.h"
 #include "stage/week1.h"
-#include "stage/week2.h"
-#include "stage/week3.h"
-#include "stage/week4.h"
-#include "stage/week5.h"
-#include "stage/week6.h"
-#include "stage/week7.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "stagedef_disc1.h"
