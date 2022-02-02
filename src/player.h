@@ -29,6 +29,7 @@ typedef enum
 	
 	PlayerAnim_Dead6, //Retry
 	PlayerAnim_Dead7, //Blueball
+	PlayerAnim_Dead8, //Blueball
 	
 	PlayerAnim_Max,
 } PlayerAnim;

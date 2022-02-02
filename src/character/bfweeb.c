@@ -125,6 +125,15 @@ static const CharFrame char_bfweeb_frame[] = {
 	{BFWeeb_ArcMain_Weeb4, { 64,  66,  58,  62}, { 53 - 25,  58 - 3}}, //64 death weeb 2 6
 	{BFWeeb_ArcMain_Weeb4, {123,  66,  58,  62}, { 53 - 25,  58 - 3}}, //65 death weeb 2 7
 
+	{BFWeeb_ArcMain_Weeb5, {  2,   6,  58,  62}, { 53 - 25,  58 - 3}}, //66 death weeb 2 1
+	{BFWeeb_ArcMain_Weeb5, { 65,   6,  58,  62}, { 53 - 25,  58 - 3}}, //67 death weeb 2 2
+	{BFWeeb_ArcMain_Weeb5, {131,   6,  58,  62}, { 53 - 25,  58 - 3}}, //68 death weeb 2 3
+	{BFWeeb_ArcMain_Weeb5, {197,   6,  58,  62}, { 53 - 25,  58 - 3}}, //69 death weeb 2 4
+	{BFWeeb_ArcMain_Weeb5, {  2,  73,  58,  62}, { 53 - 25,  58 - 3}}, //70 death weeb 2 5
+	{BFWeeb_ArcMain_Weeb5, { 63,  73,  58,  62}, { 53 - 25,  58 - 3}}, //71 death weeb 2 6
+	{BFWeeb_ArcMain_Weeb5, {125,  73,  58,  62}, { 53 - 25,  58 - 3}}, //72 death weeb 2 7
+	{BFWeeb_ArcMain_Weeb5, {195,  73,  58,  62}, { 53 - 25,  58 - 3}}, //73 death weeb 2 8
+
 };
 
 static const Animation char_bfweeb_anim[PlayerAnim_Max] = {
@@ -146,15 +155,16 @@ static const Animation char_bfweeb_anim[PlayerAnim_Max] = {
 	{2, (const u8[]){20, 21, 22, ASCR_BACK, 1}},        //PlayerAnim_Peace
 	{2, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},      //PlayerAnim_Sweat
 	
-	{2, (const u8[]){21, 22, 23, 24, 25, 26, ASCR_CHGANI, PlayerAnim_Dead1}}, //CharAnim_Idle
-	{2, (const u8[]){26, ASCR_REPEAT, 1}}, //CharAnim_Idle
+	{2, (const u8[]){21, 21, 22, 22, 23, 23, 24, 25, 26, ASCR_CHGANI, PlayerAnim_Dead1}}, //CharAnim_Idle
+	{2, (const u8[]){26, 26, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58,  ASCR_CHGANI, PlayerAnim_Dead3}}, //CharAnim_Idle
 	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_BACK, 1}}, //CharAnim_Idle
 	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}},             //PlayerAnim_Dead4
 	{2, (const u8[]){59, 60, 61, 62, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead3}}, 
 
-	{2, (const u8[]){21, 60, 61, 22, 63, 64, 65, ASCR_CHGANI, PlayerAnim_Dead7}},
-	{2, (const u8[]){65, 65, 65, 65, 65, 65, 65, ASCR_BACK, 1}},
+	{2, (const u8[]){66, 67, 68, 69, 70, 71, 71, 71, 71, 72, 72, 72, 72, 73, 73, 73, 58, 58, 58, 58, 58, 58, ASCR_CHGANI, PlayerAnim_Dead7}},
+	{3, (const u8[]){58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, ASCR_BACK, 1}},
+	{2, (const u8[]){21, 21, 22, 22, 23, 23, 24, 25, 26, ASCR_CHGANI, PlayerAnim_Dead1}},
 };
 
 //Boyfriend Weeb player functions
@@ -247,12 +257,8 @@ void Char_BFWeeb_SetAnim(Character *character, u8 anim)
 	//Perform animation checks
 	switch (anim)
 	{
-		case PlayerAnim_Dead0:
-			//Begin reading dead.arc and adjust focus
-			this->arc_dead = IO_AsyncReadFile(&this->file_dead_arc);
+		case PlayerAnim_Dead8:
 			character->focus_x = FIXED_DEC(0,1);
-			//Load retry art
-			Gfx_LoadTex(&this->tex_retry, this->arc_ptr[BF_ArcMain_Retry], 0);
 			break;
 	}
 	

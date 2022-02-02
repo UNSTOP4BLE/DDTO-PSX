@@ -1415,6 +1415,7 @@ void Stage_Tick(void)
 	else
 	#endif
 	{
+
 		//Return to menu when start is pressed
 		if (pad_state.press & PAD_START && stage.state == StageState_Play)
 		{
@@ -1425,6 +1426,7 @@ void Stage_Tick(void)
 		else if (pad_state.press & (PAD_START | PAD_CROSS) && stage.state != StageState_Play)
 		{
 			stage.player->set_anim(stage.player, PlayerAnim_Dead6);
+			Audio_PlayXA_Track(XA_GameOverEndPixel, 0x40, 3, false);
 		}
 		//Return to menu when circle is pressed
 		else if (pad_state.press & PAD_CIRCLE && stage.state != StageState_Play)
@@ -1867,6 +1869,7 @@ void Stage_Tick(void)
 				{
 					//Player has died
 					stage.player_state[0].health = 0;
+
 					stage.state = StageState_Dead;
 				}
 				if (stage.player_state[0].health > 20000)
@@ -1918,8 +1921,6 @@ void Stage_Tick(void)
 		}
 		case StageState_Dead: //Start BREAK animation and reading extra data from CD
 		{
-			//Stop music immediately
-			Audio_StopXA();
 			
 			//Unload stage data
 			Mem_Free(stage.chart_data);
@@ -1946,9 +1947,10 @@ void Stage_Tick(void)
 			
 			//Change background colour to black
 			Gfx_SetClear(0, 0, 0);
-			
+
 			//Run death animation, focus on player, and change state
-			stage.player->set_anim(stage.player, PlayerAnim_Dead0);
+			stage.player->set_anim(stage.player, PlayerAnim_Dead8);
+		    (stage.stage_id >= StageId_1_1 && stage.stage_id <= StageId_1_3) ? Audio_PlayXA_Track(XA_GameOverPixel, 0x40, 2, true) : Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);
 			
 			Stage_FocusCharacter(stage.player, 0);
 			stage.song_time = 0;
@@ -1967,7 +1969,7 @@ void Stage_Tick(void)
 			stage.player->tick(stage.player);
 			
 			//Drop mic and change state if CD has finished reading and animation has ended
-			if (IO_IsReading() || stage.player->animatable.anim != PlayerAnim_Dead1)
+			if (stage.player->animatable.anim != PlayerAnim_Dead1)
 				break;
 			
 			stage.player->set_anim(stage.player, PlayerAnim_Dead2);
@@ -1983,10 +1985,7 @@ void Stage_Tick(void)
 			
 			//Enter next state once mic has been dropped
 			if (stage.player->animatable.anim == PlayerAnim_Dead3)
-			{
 				stage.state = StageState_DeadRetry;
-				(stage.stage_id >= StageId_1_1 && stage.stage_id <= StageId_1_3) ? Audio_PlayXA_Track(XA_GameOverPixel, 0x40, 2, true) : Audio_PlayXA_Track(XA_GameOver, 0x40, 1, true);
-			}
 			break;
 		}
 		case StageState_DeadRetry:

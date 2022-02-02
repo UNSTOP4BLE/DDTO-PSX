@@ -11,6 +11,7 @@ static const XA_TrackDef xa_tracks[] = {
 	{XA_Menu, XA_LENGTH(11295)}, //XA_GettinFreaky
 	{XA_Menu, XA_LENGTH(3840)},  //XA_GameOver
 	{XA_Menu, XA_LENGTH(8200)},  //XA_GameOver
+	{XA_Menu, XA_LENGTH(400)},  //XA_GameOver
 	//WEEK1A.XA
 	{XA_Week1A, XA_LENGTH(8600)}, //XA_Bopeebo
 	{XA_Week1A, XA_LENGTH(8300)}, //XA_Fresh
@@ -71,6 +72,7 @@ static const XA_Mp3 xa_mp3s[] = {
 	{"freaky", false},   //XA_GettinFreaky
 	{"gameover", false}, //XA_GameOver
 	{"gameoverpixel", false}, //XA_GameOver
+	{"gameoverendpixel", false}, //XA_GameOver
 	//WEEK1A.XA
 	{"bopeebo", true}, //XA_Bopeebo
 	{"fresh", true},   //XA_Fresh

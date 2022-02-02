@@ -73,8 +73,6 @@ static void XA_Init(void)
 static void XA_Quit(void)
 {
 	//Set XA state
-	if (!(xa_state & XA_STATE_INIT))
-		return;
 	xa_state = 0;
 	
 	//Stop playing XA
