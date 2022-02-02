@@ -40,24 +40,24 @@ typedef struct
 
 //Dad character definitions
 static const CharFrame char_bigmpix_frame[] = {
-	{bigmpix_ArcMain_idle0, {  0,   0, 82, 129}, { 82, 117}}, //0 idle 1
-	{bigmpix_ArcMain_idle0, { 82,   0, 82, 130}, { 82, 118}}, //1 idle 2
-	{bigmpix_ArcMain_idle0, {164,   0, 83, 124}, { 83, 112}}, //2 idle 3
-	{bigmpix_ArcMain_idle1, {  0,   0, 82, 128}, { 82, 116}}, //3 idle 4
-	{bigmpix_ArcMain_idle1, { 82,   0, 82, 129}, { 82, 117}}, //4 idle 5
-	{bigmpix_ArcMain_idle1, {164,   0, 82, 128}, { 82, 116}}, //5 idle 6
+	{bigmpix_ArcMain_idle0, {  0,   0, 82, 129}, { 69, 117}}, //0 idle 1
+	{bigmpix_ArcMain_idle0, { 82,   0, 82, 130}, { 69, 118}}, //1 idle 2
+	{bigmpix_ArcMain_idle0, {164,   0, 83, 124}, { 69, 112}}, //2 idle 3
+	{bigmpix_ArcMain_idle1, {  0,   0, 82, 128}, { 69, 116}}, //3 idle 4
+	{bigmpix_ArcMain_idle1, { 82,   0, 82, 129}, { 69, 117}}, //4 idle 5
+	{bigmpix_ArcMain_idle1, {164,   0, 82, 128}, { 69, 116}}, //5 idle 6
 	
-	{bigmpix_ArcMain_hit0, {164,   0, 87, 126}, { 87, 114}}, //6 left 1
-	{bigmpix_ArcMain_hit0, {  0, 116, 85, 128}, { 85, 116}}, //7 left 2
+	{bigmpix_ArcMain_hit0, {164,   0, 87, 126}, { 73, 114}}, //6 left 1
+	{bigmpix_ArcMain_hit0, {  0, 116, 85, 128}, { 72, 116}}, //7 left 2
 	
-	{bigmpix_ArcMain_hit0, {  0,   0, 82, 116}, { 82, 104}}, //8 down 1
-	{bigmpix_ArcMain_hit0, { 82,   0, 82, 119}, { 82, 107}}, //9 down 2
+	{bigmpix_ArcMain_hit0, {  0,   0, 82, 116}, { 69, 104}}, //8 down 1
+	{bigmpix_ArcMain_hit0, { 82,   0, 82, 119}, { 69, 107}}, //9 down 2
 	
-	{bigmpix_ArcMain_hit0, { 85, 119, 82, 120}, { 82, 118}}, //10 up 1
-	{bigmpix_ArcMain_hit0, {167, 126, 82, 119}, { 82, 116}}, //11 up 2
+	{bigmpix_ArcMain_hit0, { 85, 119, 82, 120}, { 69, 118}}, //10 up 1
+	{bigmpix_ArcMain_hit0, {167, 126, 82, 119}, { 69, 116}}, //11 up 2
 	
-	{bigmpix_ArcMain_hit1, {  0,   0, 92, 130}, { 87, 118}}, //12 right 1
-	{bigmpix_ArcMain_hit1, { 92,   0, 93, 129}, { 88, 117}}, //13 right 2
+	{bigmpix_ArcMain_hit1, {  0,   0, 92, 130}, { 68, 118}}, //12 right 1
+	{bigmpix_ArcMain_hit1, { 92,   0, 93, 129}, { 67, 117}}, //13 right 2
 };
 
 static const Animation char_bigmpix_anim[CharAnim_Max] = {
@@ -90,13 +90,6 @@ void Char_bigmpix_SetFrame(void *user, u8 frame)
 void Char_bigmpix_Tick(Character *character)
 {
 	Char_bigmpix *this = (Char_bigmpix*)character;
-	
-	//Camera stuff
-	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 912)
-	{
-		this->character.focus_x = FIXED_DEC(4,1);
-		this->character.focus_y = FIXED_DEC(-74,1);
-	}
 	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
@@ -146,8 +139,8 @@ Character *Char_bigmpix_New(fixed_t x, fixed_t y)
 	
 	this->character.health_i = 8;
 	
-	this->character.focus_x = FIXED_DEC(24,1);
-	this->character.focus_y = FIXED_DEC(-66,1);
+	this->character.focus_x = FIXED_DEC(-25,1);
+	this->character.focus_y = FIXED_DEC(-59,1);
 	this->character.focus_zoom = FIXED_DEC(2,1);
 	
 	//Load art

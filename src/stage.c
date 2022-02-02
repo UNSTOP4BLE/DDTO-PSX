@@ -71,6 +71,7 @@ int arrowposx,middletoggle;
 //Stage definitions
 #include "character/bf.h"
 #include "character/bfweeb.h"
+#include "character/bfweebm.h"
 #include "character/monikapix.h"
 #include "character/duet.h"
 #include "character/bigmpix.h"
@@ -78,6 +79,7 @@ int arrowposx,middletoggle;
 #include "character/gfweeb.h"
 
 #include "stage/week1.h"
+#include "stage/week2.h"
 
 static const StageDef stage_defs[StageId_Max] = {
 	#include "stagedef_disc1.h"
@@ -1515,6 +1517,8 @@ void Stage_Tick(void)
 	{
 		case StageState_Play:
 		{   
+			FntPrint("step %d", stage.song_step);
+			
 			if (stage.middlescroll)
 				arrowposx = -80;
 			else

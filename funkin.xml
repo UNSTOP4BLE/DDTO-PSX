@@ -59,6 +59,8 @@
 			
 			<!-- Week 2 assets -->
 			<dir name = "week2">
+			<!-- Background art -->
+				<file name = "back.arc" type = "data" source = "iso/week2/back.arc"/>
 				<!-- Spookeez charts -->
 				<file name = "2.1e.cht" type = "data" source = "iso/chart/rain-clouds-easy.json.cht"/>
 				<file name = "2.1n.cht" type = "data" source = "iso/chart/rain-clouds.json.cht"/>
@@ -141,8 +143,8 @@
 			<dir name = "char">
 				<!-- Boyfriend assets -->
 				<file name = "bf.arc" type = "data" source = "iso/bf/main.arc"/>
-				<file name = "bfdead.arc" type = "data" source = "iso/bf/dead.arc"/>
 				<file name = "bfweeb.arc" type = "data" source = "iso/bfweeb/weeb.arc"/>
+				<file name = "bfweebm.arc" type = "data" source = "iso/bfweebm/weebm.arc"/>
 		
 				<!-- monika assets -->
 				<file name = "monikap.arc" type = "data" source = "iso/monikap/main.arc"/>

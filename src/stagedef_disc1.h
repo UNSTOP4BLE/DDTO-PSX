@@ -32,12 +32,12 @@
 	},
 	{ //StageId_1_3 (Dadbattle)
 		//Characters
-		{Char_BFWeeb_New,  FIXED_DEC(52,1),  FIXED_DEC(50,1)},
-		{Char_bigmpix_New, FIXED_DEC(-60,1),  FIXED_DEC(50,1)},
-		{Char_GFWeeb_New,   FIXED_DEC(0,1),  FIXED_DEC(45,1)},
+		{Char_bfweebm_New,  FIXED_DEC(65,1),  FIXED_DEC(65,1)},
+		{Char_bigmpix_New, FIXED_DEC(20,1),  FIXED_DEC(47,1)},
+		{NULL},
 		
 		//Stage background
-		Back_week1_New,
+		Back_week2_New,
 		
 		//Song info
 		{FIXED_DEC(17,10),FIXED_DEC(2,1),FIXED_DEC(22,10)},

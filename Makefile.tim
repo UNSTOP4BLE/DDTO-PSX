@@ -7,15 +7,16 @@ all: \
 	iso/stage/hud1.tim \
 	iso/stage/hud0weeb.tim \
 	iso/bf/main.arc \
-	iso/bf/dead.arc \
 	iso/bfweeb/weeb.arc \
+	iso/bfweebm/weebm.arc \
 	iso/monikap/main.arc \
 	iso/bigmpix/main.arc \
 	iso/duet/main.arc \
 	iso/gf/main.arc \
 	iso/gf/weeb.arc \
 	iso/gf/speaker.tim \
-	iso/week1/back.arc 
+	iso/week1/back.arc \
+	iso/week2/back.arc 
 
 iso/%.tim: iso/%.png
 	tools/funkintimconv/funkintimconv $@ $<
@@ -28,8 +29,8 @@ iso/menu/menu.arc: iso/menu/back.tim iso/menu/ng.tim iso/menu/story.tim iso/menu
 
 # BF
 iso/bf/main.arc: iso/bf/bf0.tim iso/bf/bf1.tim iso/bf/bf2.tim iso/bf/bf3.tim iso/bf/bf4.tim iso/bf/bf5.tim iso/bf/bf6.tim iso/bf/dead0.tim iso/bf/dead1.tim iso/bf/dead2.tim iso/bf/retry.tim
-iso/bf/dead.arc: iso/bf/dead1.tim iso/bf/dead2.tim iso/bf/retry.tim
 iso/bfweeb/weeb.arc: iso/bfweeb/weeb0.tim iso/bfweeb/weeb1.tim iso/bfweeb/weeb2.tim iso/bfweeb/weeb3.tim iso/bfweeb/weeb4.tim iso/bfweeb/weeb5.tim iso/bfweeb/retryw.tim
+iso/bfweebm/weebm.arc: iso/bfweebm/weeb0.tim iso/bfweebm/weeb1.tim iso/bfweebm/weeb2.tim iso/bfweebm/weeb3.tim iso/bfweebm/weeb4.tim iso/bfweebm/weeb5.tim iso/bfweebm/retryw.tim
 
 # Monika
 iso/monikap/main.arc: iso/monikap/monika0.tim iso/monikap/monika1.tim
@@ -44,3 +45,6 @@ iso/gf/weeb.arc: iso/gf/weeb0.tim iso/gf/weeb1.tim
 
 # week1
 iso/week1/back.arc: iso/week1/back0.tim iso/week1/back1.tim iso/week1/back2.tim
+
+# week2
+iso/week2/back.arc: iso/week2/back0.tim iso/week2/back1.tim

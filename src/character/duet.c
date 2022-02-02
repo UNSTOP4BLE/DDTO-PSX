@@ -116,13 +116,6 @@ void Char_duet_Tick(Character *character)
 {
 	Char_duet *this = (Char_duet*)character;
 	
-	//Camera stuff
-	if ((stage.flag & STAGE_FLAG_JUST_STEP) && stage.song_step >= 912)
-	{
-		this->character.focus_x = FIXED_DEC(4,1);
-		this->character.focus_y = FIXED_DEC(-74,1);
-	}
-	
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);

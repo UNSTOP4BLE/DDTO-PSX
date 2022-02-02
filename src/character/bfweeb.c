@@ -185,7 +185,7 @@ void Char_BFWeeb_SetFrame(void *user, u8 frame)
 void Char_BFWeeb_Tick(Character *character)
 {
 	Char_BF *this = (Char_BF*)character;
-	
+
 	//Handle animation updates
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0 ||
 	    (character->animatable.anim != CharAnim_Left &&
@@ -302,8 +302,9 @@ Character *Char_BFWeeb_New(fixed_t x, fixed_t y)
 	
 	this->character.focus_x = FIXED_DEC(-34,1);
 	this->character.focus_y = FIXED_DEC(-40,1);
+
 	this->character.focus_zoom = FIXED_DEC(2,1);
-	
+
 	//Load art
 	this->arc_main = IO_Read("\\CHAR\\BFWEEB.ARC;1");
 	this->arc_dead = NULL;
