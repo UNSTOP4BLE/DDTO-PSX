@@ -24,6 +24,29 @@ typedef struct
 } Back_week2;
 
 //Week 6 background functions
+void Back_week2_DrawFG(StageBack *back)
+{
+	Back_week2 *this = (Back_week2*)back;
+	
+	fixed_t fx, fy;
+
+	//Draw black
+	RECT black_src = {254, 254, 2, 2};
+	RECT_FIXED black_dst = {
+		FIXED_DEC(-90,1),
+		FIXED_DEC(-90,1),
+		FIXED_DEC(400,1),
+		FIXED_DEC(400,1)
+	};
+
+	if (stage.song_step <= 131)
+		Stage_DrawTex(&this->tex_back0, &black_src, &black_dst, stage.camera.bzoom);
+	if (stage.song_step >= 897)
+		Stage_DrawTex(&this->tex_back0, &black_src, &black_dst, stage.camera.bzoom);
+	
+}
+
+
 void Back_week2_DrawBG(StageBack *back)
 {
 	Back_week2 *this = (Back_week2*)back;
@@ -75,7 +98,7 @@ StageBack *Back_week2_New(void)
 		return NULL;
 	
 	//Set background functions
-	this->back.draw_fg = NULL;
+	this->back.draw_fg = Back_week2_DrawFG;
 	this->back.draw_md = NULL;
 	this->back.draw_bg = Back_week2_DrawBG;
 	this->back.free = Back_week2_Free;

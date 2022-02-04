@@ -58,10 +58,29 @@ static const CharFrame char_bigmpix_frame[] = {
 	
 	{bigmpix_ArcMain_hit1, {  0,   0, 92, 130}, { 68, 118}}, //12 right 1
 	{bigmpix_ArcMain_hit1, { 92,   0, 93, 129}, { 67, 117}}, //13 right 2
+
+	//alt stuffs
+	{bigmpix_ArcMain_hit2, {0, 121, 122, 116}, { 95, 104}}, //6 left 1
+	{bigmpix_ArcMain_hit2, {122, 119, 125, 117}, { 90, 105}}, //7 left 2
+	{bigmpix_ArcMain_hit3, {0,   0, 96, 127}, { 78, 116}}, //16 left 2
+	
+	{bigmpix_ArcMain_hit1, {0, 130, 99, 115}, { 79, 103}}, //8 down 1
+	{bigmpix_ArcMain_hit1, {99, 129, 85, 116}, { 71, 104}}, //9 down 2
+	{bigmpix_ArcMain_hit2, {0, 0, 96, 121}, { 72, 109}}, //8 down 1
+	{bigmpix_ArcMain_hit2, {96, 0, 82, 119}, { 69, 107}}, //9 down 2
+	
+	{bigmpix_ArcMain_hit4, {0,   0, 135, 122}, { 90, 119}}, //10 up 1
+	{bigmpix_ArcMain_hit4, {142,   0, 111, 119}, { 79, 116}}, //11 up 2
+	{bigmpix_ArcMain_hit4, {0,   122, 89, 119}, { 75, 116}}, //10 up 1
+	{bigmpix_ArcMain_hit4, {89,  121, 82, 119}, { 69, 119}}, //11 up 2
+	
+	{bigmpix_ArcMain_hit3, {96,   0, 108, 123}, { 86, 111}}, //12 right 1
+	{bigmpix_ArcMain_hit3, {0,   127, 99, 129}, { 80, 117}}, //13 right 2
+	{bigmpix_ArcMain_hit3, {99,  123, 98, 129}, { 84, 117}}, //13 right 2
 };
 
 static const Animation char_bigmpix_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{3, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
 	{2, (const u8[]){ 6,  7, ASCR_BACK, 0}},             //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 8,  9, ASCR_BACK, 0}},             //CharAnim_Down
@@ -69,6 +88,18 @@ static const Animation char_bigmpix_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 10, 11, ASCR_BACK, 0}},             //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_UpAlt
 	{2, (const u8[]){ 12, 13, ASCR_BACK, 0}},             //CharAnim_Right
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
+};
+
+static const Animation char_bigmpix_animb[CharAnim_Max] = {
+	{3, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{2, (const u8[]){ 14,  15, 16,  ASCR_BACK, 0}},             //CharAnim_Left
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
+	{2, (const u8[]){ 17,  18, 19, 20, ASCR_BACK, 0}},             //CharAnim_Down
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_DownAlt
+	{2, (const u8[]){ 21, 22, 23, 24, ASCR_BACK, 0}},             //CharAnim_Up
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_UpAlt
+	{2, (const u8[]){ 25, 26, 27, ASCR_BACK, 0}},             //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_RightAlt
 };
 
@@ -91,12 +122,45 @@ void Char_bigmpix_Tick(Character *character)
 {
 	Char_bigmpix *this = (Char_bigmpix*)character;
 	
+	if (stage.song_step >= 131 && stage.song_step <= 132)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step >= 442 && stage.song_step <= 452)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step >= 543 && stage.song_step < 545)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step >= 552 && stage.song_step < 553)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step >= 555 && stage.song_step <= 556)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step >= 557 && stage.song_step <= 576)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step >= 653 && stage.song_step <= 655)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step >= 691 && stage.song_step <= 701)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+	else if (stage.song_step == 802)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+	
+	else if (stage.song_step >= 818 && stage.song_step <= 821)
+		Animatable_Animate(&character->animatableb, (void*)this, Char_bigmpix_SetFrame);
+
+
+	else
+		Animatable_Animate(&character->animatable, (void*)this, Char_bigmpix_SetFrame);
+
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
 	
 	//Animate and draw
-	Animatable_Animate(&character->animatable, (void*)this, Char_bigmpix_SetFrame);
 	Character_Draw(character, &this->tex, &char_bigmpix_frame[this->frame]);
 }
 
@@ -104,6 +168,7 @@ void Char_bigmpix_SetAnim(Character *character, u8 anim)
 {
 	//Set animation
 	Animatable_SetAnim(&character->animatable, anim);
+	Animatable_SetAnim(&character->animatableb, anim);
 	Character_CheckStartSing(character);
 }
 
@@ -132,6 +197,7 @@ Character *Char_bigmpix_New(fixed_t x, fixed_t y)
 	this->character.free = Char_bigmpix_Free;
 	
 	Animatable_Init(&this->character.animatable, char_bigmpix_anim);
+	Animatable_Init(&this->character.animatableb, char_bigmpix_animb);
 	Character_Init((Character*)this, x, y);
 	
 	//Set character information
