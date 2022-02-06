@@ -67,6 +67,7 @@ static const u8 note_anims[4][3] = {
 
 //middlescroll
 int arrowposx,middletoggle;
+boolean iconweeb = 0;
 
 //Stage definitions
 #include "character/bf.h"
@@ -704,21 +705,21 @@ static void Stage_DrawHealth(s16 health, u8 i, s8 ox)
 	//Check if we should use 'dying' frame
 	s8 dying;
 	if (ox < 0)
-		dying = (health >= 18000) * 24;
+		dying = (health >= 18000) * 50;
 	else
-		dying = (health <= 2000) * 24;
+		dying = (health <= 2000) * 50;
 	
 	//Get src and dst
 	fixed_t hx = (128 << FIXED_SHIFT) * (10000 - health) / 10000;
 	RECT src = {
-		(i % 5) * 48 + dying,
-		16 + (i / 5) * 24,
-		24,
-		24
+		(i % 2) * 100 + dying,
+		16 + (i / 2) * 50,
+		50,
+		50
 	};
 	RECT_FIXED dst = {
-		hx + ox * FIXED_DEC(11,1) - FIXED_DEC(12,1),
-		FIXED_DEC(SCREEN_HEIGHT2 - 32 + 4 - 12, 1),
+		hx + ox * FIXED_DEC(25,1) - FIXED_DEC(25,1),
+		FIXED_DEC(SCREEN_HEIGHT2 - 32 + 4 - 25, 1),
 		src.w << FIXED_SHIFT,
 		src.h << FIXED_SHIFT
 	};
@@ -1246,12 +1247,24 @@ void Stage_Load(StageId id, StageDiff difficulty, boolean story)
 	stage.story = story;
 	
 	//Load HUD textures
-	if (id >= StageId_1_1 && id <= StageId_1_3)
+	if (id >= StageId_1_1 && id <= StageId_1_3) 
+	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0WEEB.TIM;1"), GFX_LOADTEX_FREE);
+		iconweeb = 1;
+	}
 	else
+	{
 		Gfx_LoadTex(&stage.tex_hud0, IO_Read("\\STAGE\\HUD0.TIM;1"), GFX_LOADTEX_FREE);
-	Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1.TIM;1"), GFX_LOADTEX_FREE);
+		iconweeb = 0;
+	}
+
+	if (iconweeb == 0)
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1.TIM;1"), GFX_LOADTEX_FREE);
+	else if (iconweeb == 1)
+		Gfx_LoadTex(&stage.tex_hud1, IO_Read("\\STAGE\\HUD1WEEB.TIM;1"), GFX_LOADTEX_FREE);
 	
+
+
 	//Load stage background
 	Stage_LoadStage();
 	
@@ -1517,7 +1530,6 @@ void Stage_Tick(void)
 	{
 		case StageState_Play:
 		{   
-			FntPrint("step %d", stage.song_step);
 			
 			if (stage.middlescroll)
 				arrowposx = -80;

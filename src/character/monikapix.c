@@ -132,7 +132,7 @@ Character *Char_monikapix_New(fixed_t x, fixed_t y)
 	//Set character information
 	this->character.spec = 0;
 	
-	this->character.health_i = 8;
+	this->character.health_i = 2;
 	
 	this->character.focus_x = FIXED_DEC(24,1);
 	this->character.focus_y = FIXED_DEC(-66,1);
