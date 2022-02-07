@@ -63,6 +63,9 @@
 			<dir name = "bgdoki">
 				<!-- Background art -->
 				<file name = "back.arc" type = "data" source = "iso/bgdoki/back.arc"/>
+				<file name = "yuri.arc" type = "data" source = "iso/bgdoki/bgchars/yuri.arc"/>
+				<file name = "sayori.arc" type = "data" source = "iso/bgdoki/bgchars/sayori.arc"/>
+				<file name = "natsuki.arc" type = "data" source = "iso/bgdoki/bgchars/natsuki.arc"/>
 			</dir>
 			<dir name = "week2">
 			<!-- Background art -->

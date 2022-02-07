@@ -64,9 +64,9 @@
 	},
 	{ //StageId_2_1 (Spookeez)
 		//Characters
-		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_sayori_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
-		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
+		{Char_BF_New,      FIXED_DEC(56 + 150,1),   FIXED_DEC(85 + 160,1)},
+		{Char_sayori_New,  FIXED_DEC(-90 + 150,1),   FIXED_DEC(85 + 160,1)},
+		{Char_GF_New,       FIXED_DEC(0 + 150,1),  FIXED_DEC(-15 + 160,1)},
 		
 		//Stage background
 		Back_bgdoki_New,

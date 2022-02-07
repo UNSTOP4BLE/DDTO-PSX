@@ -19,7 +19,10 @@ all: \
 	iso/gf/speaker.tim \
 	iso/week1/back.arc \
 	iso/week2/back.arc \
-	iso/bgdoki/back.arc 
+	iso/bgdoki/back.arc \
+	iso/bgdoki/bgchars/yuri.arc \
+	iso/bgdoki/bgchars/sayori.arc \
+	iso/bgdoki/bgchars/natsuki.arc
 
 iso/%.tim: iso/%.png
 	tools/funkintimconv/funkintimconv $@ $<
@@ -57,3 +60,6 @@ iso/week2/back.arc: iso/week2/back0.tim iso/week2/back1.tim
 
 # doki
 iso/bgdoki/back.arc: iso/bgdoki/back0.tim iso/bgdoki/back1.tim
+iso/bgdoki/bgchars/yuri.arc: iso/bgdoki/bgchars/yuri0.tim iso/bgdoki/bgchars/yuri1.tim
+iso/bgdoki/bgchars/sayori.arc: iso/bgdoki/bgchars/sayori.tim
+iso/bgdoki/bgchars/natsuki.arc: iso/bgdoki/bgchars/natsuki.tim
