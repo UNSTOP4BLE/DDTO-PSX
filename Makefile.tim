@@ -46,7 +46,7 @@ iso/duet/main.arc: iso/duet/duet0.tim iso/duet/duet1.tim iso/duet/duet2.tim iso/
 iso/bigmpix/main.arc: iso/bigmpix/idle0.tim iso/bigmpix/idle1.tim iso/bigmpix/hit0.tim iso/bigmpix/hit1.tim iso/bigmpix/hit2.tim iso/bigmpix/hit3.tim iso/bigmpix/hit4.tim
 
 # Sayori
-iso/sayori/main.arc: iso/sayori/idle0.tim iso/sayori/idle1.tim iso/sayori/idle2.tim iso/sayori/idle3.tim iso/sayori/left.tim iso/sayori/up.tim iso/sayori/right.tim iso/sayori/down.tim
+iso/sayori/main.arc: iso/sayori/idle0.tim iso/sayori/idle1.tim iso/sayori/idle2.tim iso/sayori/idle3.tim iso/sayori/left.tim iso/sayori/up.tim iso/sayori/right.tim iso/sayori/down.tim iso/sayori/zad0.tim iso/sayori/zad1.tim
 
 # GF
 iso/gf/main.arc: iso/gf/gf0.tim iso/gf/gf1.tim iso/gf/gf2.tim
