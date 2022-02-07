@@ -41,22 +41,22 @@ typedef struct
 
 //sayori character definitions
 static const CharFrame char_sayori_frame[] = {
-	{sayori_ArcMain_Idle0, {  0,   77, 88, 165}, { 80, 163}}, //0 idle 1
+	{sayori_ArcMain_Idle0, {  0,   77, 88, 165}, { 80, 162}}, //0 idle 1
 	{sayori_ArcMain_Idle0, { 88,   75, 88, 167}, { 81, 164}}, //1 idle 2
 	{sayori_ArcMain_Idle0, {166,   0,  85, 169}, { 78, 166}}, //2 idle 3
 	{sayori_ArcMain_Idle1, {  0,   0,  84, 169}, { 78, 166}}, //3 idle 4
 	{sayori_ArcMain_Idle1, { 84,   0,  77, 169}, { 72, 166}}, //0 idle 1
 	{sayori_ArcMain_Idle1, {161,   0,  77, 169}, { 71, 166}}, //1 idle 2
-	{sayori_ArcMain_Idle2, {  0,   2,  63, 165}, { 59, 163}}, //2 idle 3
+	{sayori_ArcMain_Idle2, {  0,   2,  63, 165}, { 59, 162}}, //2 idle 3
 	{sayori_ArcMain_Idle2, { 63,   0,  64, 167}, { 63, 164}}, //3 idle 4
 	{sayori_ArcMain_Idle2, {127,   0,  69, 167}, { 65, 164}}, //0 idle 1
 	{sayori_ArcMain_Idle3, {  0,   2,  73, 167}, { 68, 164}}, //1 idle 2
-	{sayori_ArcMain_Idle3, { 73,   0,  77, 169}, { 71, 167}}, //2 idle 3
-	{sayori_ArcMain_Idle3, {150,   0,  77, 169}, { 72, 167}}, //3 idle 4
+	{sayori_ArcMain_Idle3, { 73,   0,  77, 169}, { 71, 166}}, //2 idle 3
+	{sayori_ArcMain_Idle3, {150,   0,  77, 169}, { 72, 166}}, //3 idle 4
 	
-	{sayori_ArcMain_Left, {  0,   0, 61, 167}, { 61, 165}}, //4 left 1
-	{sayori_ArcMain_Left, { 61,   0, 61, 163}, { 58, 161}}, //5 left 2
-	{sayori_ArcMain_Left, {122,   4, 61, 163}, { 57, 161}}, //5 left 2
+	{sayori_ArcMain_Left, {  0,   0, 61, 167}, { 61, 166}}, //4 left 1
+	{sayori_ArcMain_Left, { 61,   4, 61, 163}, { 58, 162}}, //5 left 2
+	{sayori_ArcMain_Left, {122,   4, 61, 163}, { 57, 162}}, //5 left 2
 	
 	{sayori_ArcMain_Down, {  0,   4, 62, 151}, { 51, 150}}, //6 down 1
 	{sayori_ArcMain_Down, { 62,   1, 61, 154}, { 51, 153}}, //7 down 2
@@ -67,8 +67,8 @@ static const CharFrame char_sayori_frame[] = {
 	{sayori_ArcMain_Up, {146,   5, 73, 173}, { 66, 173}}, //9 up 2
 	
 	{sayori_ArcMain_Right, {  0,   0, 68, 165}, { 59, 162}}, //10 right 1
-	{sayori_ArcMain_Right, { 68,   0, 69, 165}, { 58, 159}}, //11 right 2
-	{sayori_ArcMain_Right, {137,   7, 74, 158}, { 59, 158}}, //11 right 2
+	{sayori_ArcMain_Right, { 68,   4, 69, 161}, { 58, 158}}, //11 right 2
+	{sayori_ArcMain_Right, {137,   7, 74, 158}, { 59, 155}}, //11 right 2
 };
 
 static const Animation char_sayori_anim[CharAnim_Max] = {
