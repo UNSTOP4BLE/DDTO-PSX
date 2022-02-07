@@ -18,7 +18,8 @@ all: \
 	iso/gf/weeb.arc \
 	iso/gf/speaker.tim \
 	iso/week1/back.arc \
-	iso/week2/back.arc 
+	iso/week2/back.arc \
+	iso/bgdoki/back.arc 
 
 iso/%.tim: iso/%.png
 	tools/funkintimconv/funkintimconv $@ $<
@@ -53,3 +54,6 @@ iso/week1/back.arc: iso/week1/back0.tim iso/week1/back1.tim iso/week1/back2.tim
 
 # week2
 iso/week2/back.arc: iso/week2/back0.tim iso/week2/back1.tim
+
+# doki
+iso/bgdoki/back.arc: iso/bgdoki/back0.tim iso/bgdoki/back1.tim

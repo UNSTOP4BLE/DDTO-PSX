@@ -60,6 +60,10 @@
 			</dir>
 			
 			<!-- Week 2 assets -->
+			<dir name = "bgdoki">
+				<!-- Background art -->
+				<file name = "back.arc" type = "data" source = "iso/bgdoki/back.arc"/>
+			</dir>
 			<dir name = "week2">
 			<!-- Background art -->
 				<file name = "back.arc" type = "data" source = "iso/week2/back.arc"/>
@@ -76,6 +80,7 @@
 				<file name = "2.3n.cht" type = "data" source = "iso/chart/my-sweets.json.cht"/>
 				<file name = "2.3h.cht" type = "data" source = "iso/chart/my-sweets-hard.json.cht"/>
 			</dir>
+			
 			
 			<!-- Week 3 assets -->
 			<dir name = "week3">

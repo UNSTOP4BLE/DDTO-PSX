@@ -69,7 +69,7 @@
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background
-		Back_week1_New,
+		Back_bgdoki_New,
 		
 		//Song info
 		{FIXED_DEC(18,10),FIXED_DEC(2,1),FIXED_DEC(22,10)},

@@ -270,6 +270,9 @@ void Back_week1_Free(StageBack *back)
 	//Free freak0 archive
 	Mem_Free(this->arc_freak0);
 
+	//Free freak0 archive
+	Mem_Free(this->arc_freak1);
+
 	//Free structure
 	Mem_Free(this);
 }
