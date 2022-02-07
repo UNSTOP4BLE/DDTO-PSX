@@ -28,6 +28,7 @@ SRCS = src/main.c \
        src/character/monikapix.c \
        src/character/duet.c \
        src/character/bigmpix.c \
+       src/character/sayori.c \
        src/character/gf.c \
        src/character/gfweeb.c \
        src/object.c \

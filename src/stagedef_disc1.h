@@ -12,7 +12,7 @@
 		1, 1,
 		XA_Bopeebo, 0,
 		
-		StageId_1_2, STAGE_LOAD_FLAG
+		StageId_1_2, STAGE_LOAD_OPPONENT
 	},
 	{ //StageId_1_2 (Fresh)
 		//Characters
@@ -28,7 +28,7 @@
 		1, 2,
 		XA_Fresh, 2,
 		
-		StageId_1_3, STAGE_LOAD_FLAG
+		StageId_1_3, STAGE_LOAD_STAGE | STAGE_LOAD_OPPONENT | STAGE_LOAD_PLAYER
 	},
 	{ //StageId_1_3 (Dadbattle)
 		//Characters
@@ -65,7 +65,7 @@
 	{ //StageId_2_1 (Spookeez)
 		//Characters
 		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_monikapix_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
+		{Char_sayori_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
 		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
 		
 		//Stage background

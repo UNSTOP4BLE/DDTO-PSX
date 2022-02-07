@@ -76,6 +76,7 @@ boolean iconweeb = 0;
 #include "character/monikapix.h"
 #include "character/duet.h"
 #include "character/bigmpix.h"
+#include "character/sayori.h"
 #include "character/gf.h"
 #include "character/gfweeb.h"
 

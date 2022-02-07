@@ -56,7 +56,8 @@
 				<!-- Dadbattle charts -->
 				<file name = "1.3e.cht" type = "data" source = "iso/chart/your-demise-easy.json.cht"/>
 				<file name = "1.3n.cht" type = "data" source = "iso/chart/your-demise.json.cht"/>
-				<file name = "1.3h.cht" type = "data" source = "iso/chart/your-demise-hard.json.cht"/>			</dir>
+				<file name = "1.3h.cht" type = "data" source = "iso/chart/your-demise-hard.json.cht"/>		
+			</dir>
 			
 			<!-- Week 2 assets -->
 			<dir name = "week2">
@@ -152,6 +153,9 @@
 				<file name = "duet.arc" type = "data" source = "iso/duet/main.arc"/>
 				<file name = "bigmpix.arc" type = "data" source = "iso/bigmpix/main.arc"/>
 				
+				<!-- sayori assets -->
+				<file name = "sayori.arc" type = "data" source = "iso/sayori/main.arc"/>
+
 				<!-- Girlfriend assets -->
 				<file name = "gf.arc" type = "data" source = "iso/gf/main.arc"/>
 				<file name = "gfweeb.arc" type = "data" source = "iso/gf/weeb.arc"/>
