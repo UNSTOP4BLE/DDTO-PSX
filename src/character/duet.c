@@ -74,6 +74,7 @@ static const CharFrame char_duet_frame[] = {
 
 static const Animation char_duet_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 0, 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}}, //special	
 	{2, (const u8[]){ 6,  7, ASCR_BACK, 0}},             //CharAnim_Left
 	{2, (const u8[]){ 14, 15, ASCR_BACK, 0}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 8,  9, ASCR_BACK, 0}},             //CharAnim_Down
@@ -86,6 +87,7 @@ static const Animation char_duet_anim[CharAnim_Max] = {
 
 static const Animation char_duet_animb[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 0, 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}}, //special
 	{2, (const u8[]){ 14, 15, ASCR_BACK, 0}},             //CharAnim_Left
 	{2, (const u8[]){ 14, 15, ASCR_BACK, 0}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 16, 17, ASCR_BACK, 0}},             //CharAnim_Down

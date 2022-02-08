@@ -25,7 +25,7 @@
 //Stage constants
 //#define STAGE_NOHUD //Disable the HUD
 
-#define STAGE_FREECAM //Freecam
+//#define STAGE_FREECAM //Freecam
 
 //normal note x
 static const fixed_t note_x[8] = {
@@ -1532,7 +1532,8 @@ void Stage_Tick(void)
 	{
 		case StageState_Play:
 		{   
-			
+			FntPrint("step: %d", stage.song_step);
+
 			if (stage.middlescroll)
 				arrowposx = -80;
 			else
@@ -1717,10 +1718,6 @@ void Stage_Tick(void)
 			{
 				//Check if screen should bump
 				boolean is_bump_step = (stage.song_step & 0xF) == 0;
-				
-				//M.I.L.F bumps
-				if (stage.stage_id == StageId_4_3 && stage.song_step >= (168 << 2) && stage.song_step < (200 << 2))
-					is_bump_step = (stage.song_step & 0x3) == 0;
 				
 				//Bump screen
 				if (is_bump_step)
@@ -1909,13 +1906,12 @@ void Stage_Tick(void)
 				health_dst.w = health_back.w << FIXED_SHIFT;
 				Stage_DrawTex(&stage.tex_hud1, &health_back, &health_dst, stage.bump);
 			}
+			//Tick foreground objects
+			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Draw stage foreground
 			if (stage.back->draw_fg != NULL)
 				stage.back->draw_fg(stage.back);
-			
-			//Tick foreground objects
-			ObjectList_Tick(&stage.objlist_fg);
 			
 			//Tick characters
 			stage.player->tick(stage.player);

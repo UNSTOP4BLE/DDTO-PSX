@@ -50,6 +50,7 @@ static const CharFrame char_gfweeb_frame[] = {
 
 static const Animation char_gfweeb_anim[CharAnim_Max] = {
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Left}},                           //CharAnim_Idle
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}}, //special
 	{1, (const u8[]){ 0,  0,  1,  1,  1,  2,  2,  2,  2,  3, ASCR_BACK, 1}}, //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Left}},                           //CharAnim_LeftAlt
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Left}},                           //CharAnim_Down

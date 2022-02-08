@@ -22,6 +22,9 @@ enum
 	sayori_ArcMain_Down,
 	sayori_ArcMain_Up,
 	sayori_ArcMain_Right,
+
+	sayori_ArcMain_Zad0,
+	sayori_ArcMain_Zad1,
 	
 	sayori_Arc_Max,
 };
@@ -69,15 +72,23 @@ static const CharFrame char_sayori_frame[] = {
 	{sayori_ArcMain_Right, {  0,   0, 68, 165}, { 59, 162}}, //10 right 1
 	{sayori_ArcMain_Right, { 68,   4, 69, 161}, { 58, 158}}, //11 right 2
 	{sayori_ArcMain_Right, {137,   7, 74, 158}, { 59, 155}}, //11 right 2
+
+	{sayori_ArcMain_Zad0, {  0,   0, 68, 165}, {67, 162}}, //10 right 1
+	{sayori_ArcMain_Zad0, { 68,   6, 65, 159}, {57, 156}}, //10 right 1
+	{sayori_ArcMain_Zad0, {133,   7, 71, 158}, {60, 155}}, //10 right 1
+	{sayori_ArcMain_Zad1, {  0,   0, 79, 156}, {64, 156}}, //10 right 1
+	{sayori_ArcMain_Zad1, { 79,   0, 75, 156}, {60, 153}}, //10 right 1
+	{sayori_ArcMain_Zad1, {154,   0, 73, 156}, {58, 153}}, //10 right 1
 };
 
 static const Animation char_sayori_anim[CharAnim_Max] = {
-	{2, (const u8[]){ 0,  1,  2,  3, 4, 5, 6, 7, 8, 9, 10, 11, ASCR_BACK, 0}}, //CharAnim_Idle
-	{2, (const u8[]){ 12,  13, 14, ASCR_BACK, 0}},         //CharAnim_Left
+	{2, (const u8[]){ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ASCR_BACK, 0}}, //CharAnim_Idle
+	{2, (const u8[]){ 24, 25, 26, 27, 28, 29, 29, 29, 29, 29, ASCR_BACK, 0}}, //special
+	{2, (const u8[]){ 12, 13, 14, ASCR_BACK, 0}},         //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_LeftAlt
-	{2, (const u8[]){ 15,  16, 17, ASCR_BACK, 0}},         //CharAnim_Down
+	{2, (const u8[]){ 15, 16, 17, ASCR_BACK, 0}},         //CharAnim_Down
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_DownAlt
-	{2, (const u8[]){ 18,  19, 20, ASCR_BACK, 0}},         //CharAnim_Up
+	{2, (const u8[]){ 18, 19, 20, ASCR_BACK, 0}},         //CharAnim_Up
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_UpAlt
 	{2, (const u8[]){ 21, 22, 23, ASCR_BACK, 0}},         //CharAnim_Right
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},   //CharAnim_RightAlt
@@ -102,6 +113,23 @@ void Char_sayori_Tick(Character *character)
 {
 	Char_sayori *this = (Char_sayori*)character;
 	
+	//depressed anim and zoom lol
+	if (stage.song_step == 751 && stage.stage_id == StageId_2_2)
+		character->set_anim(character, CharAnim_Special);
+	
+	if (stage.song_step >= 749 && stage.song_step <= 769 && stage.stage_id == StageId_2_2) 
+	{
+		this->character.focus_x = FIXED_DEC(0,1);
+		this->character.focus_y = FIXED_DEC(-100,1);
+		this->character.focus_zoom = FIXED_DEC(14,10);
+	}
+	else 
+	{
+		this->character.focus_x = FIXED_DEC(35,1);
+		this->character.focus_y = FIXED_DEC(-100,1);
+		this->character.focus_zoom = FIXED_DEC(1,1);
+	}
+
 	//Perform idle dance
 	if ((character->pad_held & (INPUT_LEFT | INPUT_DOWN | INPUT_UP | INPUT_RIGHT)) == 0)
 		Character_PerformIdle(character);
@@ -150,8 +178,8 @@ Character *Char_sayori_New(fixed_t x, fixed_t y)
 	
 	this->character.health_i = 1;
 	
-	this->character.focus_x = FIXED_DEC(65,1);
-	this->character.focus_y = FIXED_DEC(-115,1);
+	this->character.focus_x = FIXED_DEC(35,1);
+	this->character.focus_y = FIXED_DEC(-100,1);
 	this->character.focus_zoom = FIXED_DEC(1,1);
 	
 	//Load art
@@ -166,6 +194,8 @@ Character *Char_sayori_New(fixed_t x, fixed_t y)
 		"down.tim",  //sayori_ArcMain_Down
 		"up.tim",    //sayori_ArcMain_Up
 		"right.tim", //sayori_ArcMain_Right
+		"zad0.tim", //sayori_ArcMain_Right
+		"zad1.tim", //sayori_ArcMain_Right
 		NULL
 	};
 	IO_Data *arc_ptr = this->arc_ptr;

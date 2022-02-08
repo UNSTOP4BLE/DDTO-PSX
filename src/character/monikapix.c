@@ -57,6 +57,7 @@ static const CharFrame char_monikapix_frame[] = {
 
 static const Animation char_monikapix_anim[CharAnim_Max] = {
 	{2, (const u8[]){ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 3, 4, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}}, //special
 	{2, (const u8[]){ 6,  7, ASCR_BACK, 0}},             //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 8,  9, ASCR_BACK, 0}},             //CharAnim_Down

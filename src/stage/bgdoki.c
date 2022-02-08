@@ -236,6 +236,7 @@ void Back_bgdoki_Free(StageBack *back)
 	Mem_Free(this);
 	Mem_Free(this->arc_yuri);
 	Mem_Free(this->arc_sayori);
+	Mem_Free(this->arc_natsuki);
 }
 
 StageBack *Back_bgdoki_New(void)

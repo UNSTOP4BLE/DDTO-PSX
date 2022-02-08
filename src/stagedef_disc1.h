@@ -80,19 +80,19 @@
 	},
 	{ //StageId_2_2 (South)
 		//Characters
-		{Char_BF_New,      FIXED_DEC(56,1),   FIXED_DEC(85,1)},
-		{Char_monikapix_New,  FIXED_DEC(-90,1),   FIXED_DEC(85,1)},
-		{Char_GF_New,       FIXED_DEC(0,1),  FIXED_DEC(-15,1)},
+		{Char_BF_New,      FIXED_DEC(56 + 150,1),   FIXED_DEC(85 + 160,1)},
+		{Char_sayori_New,  FIXED_DEC(-90 + 150,1),   FIXED_DEC(85 + 160,1)},
+		{Char_GF_New,       FIXED_DEC(0 + 150,1),  FIXED_DEC(-15 + 160,1)},
 		
 		//Stage background
-		Back_week1_New,
+		Back_bgdoki_New,
 		
 		//Song info
 		{FIXED_DEC(19,10),FIXED_DEC(22,10),FIXED_DEC(25,10)},
 		2, 2,
 		XA_South, 2,
 		
-		StageId_2_3, STAGE_LOAD_FLAG | STAGE_LOAD_OPPONENT
+		StageId_2_2, 0
 	},
 	{ //StageId_2_3 (Monster)
 		//Characters

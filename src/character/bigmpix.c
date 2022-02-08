@@ -81,6 +81,7 @@ static const CharFrame char_bigmpix_frame[] = {
 
 static const Animation char_bigmpix_anim[CharAnim_Max] = {
 	{3, (const u8[]){ 0, 1, 2, 3, 4, 5, 0, 0, ASCR_BACK, 0}}, //CharAnim_Idle
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}}, //special
 	{2, (const u8[]){ 6,  7, ASCR_BACK, 0}},             //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 8,  9, ASCR_BACK, 0}},             //CharAnim_Down
@@ -93,6 +94,7 @@ static const Animation char_bigmpix_anim[CharAnim_Max] = {
 
 static const Animation char_bigmpix_animb[CharAnim_Max] = {
 	{3, (const u8[]){ 0, 1, 2, 3, 4, 5, ASCR_BACK, 0}}, //CharAnim_Idle
+	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}}, //special	
 	{2, (const u8[]){ 14,  15, 16,  ASCR_BACK, 0}},             //CharAnim_Left
 	{0, (const u8[]){ASCR_CHGANI, CharAnim_Idle}},       //CharAnim_LeftAlt
 	{2, (const u8[]){ 17,  18, 19, 20, ASCR_BACK, 0}},             //CharAnim_Down
