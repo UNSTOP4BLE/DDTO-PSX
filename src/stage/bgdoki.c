@@ -25,6 +25,7 @@ typedef struct
 
 	Gfx_Tex tex_back0; //Background 
 	Gfx_Tex tex_back1; //sky
+	Gfx_Tex tex_back2; //static
 
 	//bopper state
 	Gfx_Tex tex_yuri;
@@ -161,6 +162,17 @@ void Back_bgdoki_DrawFG(StageBack *back)
 	
 	fixed_t fx, fy;
 
+	//Draw static
+	RECT static_src = {0, 0, 256, 256};
+	RECT_FIXED static_dst = {
+		FIXED_DEC(-160,1),
+		FIXED_DEC(-120,1),
+		FIXED_DEC(330,1),
+		FIXED_DEC(240,1)
+	};
+	if (stage.song_step >= 749 && stage.song_step <= 769 && stage.stage_id == StageId_2_2) 
+		Stage_DrawTex(&this->tex_back2, &static_src, &static_dst, stage.bump);
+		
 	//Draw tables
 	fx = stage.camera.x;
 	fy = stage.camera.y;
@@ -183,7 +195,6 @@ void Back_bgdoki_DrawBG(StageBack *back)
 	
 	fixed_t fx, fy;
 
-		
 	//Animate and draw bopper
 	fx = stage.camera.x;
 	fy = stage.camera.y;
@@ -256,6 +267,7 @@ StageBack *Back_bgdoki_New(void)
 	IO_Data arc_back = IO_Read("\\BGDOKI\\BACK.ARC;1");
 	Gfx_LoadTex(&this->tex_back0, Archive_Find(arc_back, "back0.tim"), 0);
 	Gfx_LoadTex(&this->tex_back1, Archive_Find(arc_back, "back1.tim"), 0);
+	Gfx_LoadTex(&this->tex_back2, Archive_Find(arc_back, "static.tim"), 0);
 	Mem_Free(arc_back);
 
 	//Load bopper textures
